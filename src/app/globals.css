@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+:root {
+  --terracotta: #8c4a2f;
+  --terracotta-deep: #693521;
+  --sand: #e6d6c8;
+  --paper: #f7f2ec;
+  --paper-warm: #efe4da;
+  --ink: #2b2825;
+  --ink-soft: #5f5750;
+  --forest: #24372d;
+  --forest-light: #355544;
+  --lotus: #bc3f61;
+  --gold: #c4923f;
+  --line: rgba(43, 40, 37, 0.16);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Montserrat", Arial, sans-serif;
+}
+
+@theme inline {
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-deep: var(--terracotta-deep);
+  --color-sand: var(--sand);
+  --color-paper: var(--paper);
+  --color-paper-warm: var(--paper-warm);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-forest: var(--forest);
+  --color-forest-light: var(--forest-light);
+  --color-lotus: var(--lotus);
+  --color-gold: var(--gold);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  letter-spacing: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(188, 63, 97, 0.22);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.site-shell {
+  margin-inline: auto;
+  max-width: 1320px;
+  padding-inline: clamp(20px, 4vw, 64px);
+  width: 100%;
+}
+
+.content-shell {
+  margin-inline: auto;
+  max-width: 1160px;
+  padding-inline: clamp(20px, 4vw, 56px);
+  width: 100%;
+}
+
+.eyebrow {
+  align-items: center;
+  color: var(--terracotta);
+  display: inline-flex;
+  font-size: 0.7rem;
+  font-weight: 700;
+  gap: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  background: currentColor;
+  content: "";
+  height: 1px;
+  width: 28px;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.body-copy {
+  color: var(--ink-soft);
+  line-height: 1.78;
+}
+
+.button-primary,
+.button-light,
+.button-outline {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 10px;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease,
+    transform 180ms ease;
+}
+
+.button-primary {
+  background: var(--terracotta);
+  color: #fffaf5;
+}
+
+.button-primary:hover {
+  background: var(--terracotta-deep);
+  transform: translateY(-2px);
+}
+
+.button-light {
+  background: #fffaf5;
+  color: var(--forest);
+}
+
+.button-light:hover {
+  background: var(--sand);
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  border-color: rgba(255, 255, 255, 0.48);
+  color: #fff;
+}
+
+.button-outline:hover {
+  background: #fff;
+  color: var(--forest);
+}
+
+.hairline {
+  background: var(--line);
+  height: 1px;
+  width: 100%;
+}
+
+.screen-reader-only {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.admin-input {
+  border: 1px solid rgba(43, 40, 37, 0.18);
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 44px;
+  padding: 10px 12px;
+  text-transform: none;
+  width: 100%;
+}
+
+.admin-input:focus {
+  border-color: var(--terracotta);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .button-primary,
+  .button-light,
+  .button-outline {
+    min-height: 46px;
+    padding-inline: 16px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
