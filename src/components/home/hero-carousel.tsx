@@ -1,17 +1,26 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowDown, ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { heroSlides } from "@/data/site";
 
-const AUTOPLAY_DELAY = 6500;
+const AUTOPLAY_DELAY = 3000;
 
 export function HeroCarousel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 767px)");
+    const sync = () => setIsMobile(query.matches);
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     if (paused) return;
@@ -51,7 +60,7 @@ export function HeroCarousel() {
             priority={active === 0}
             sizes="100vw"
             className="object-cover"
-            style={{ objectPosition: slide.position }}
+            style={{ objectPosition: isMobile ? slide.positionMobile : slide.position }}
           />
         </motion.div>
       </AnimatePresence>
@@ -143,14 +152,6 @@ export function HeroCarousel() {
           </div>
         </div>
       </div>
-
-      <a
-        href="#nossa-casa"
-        className="absolute bottom-6 right-6 hidden items-center gap-2 text-[0.62rem] font-semibold uppercase text-white/60 lg:flex"
-      >
-        Descobrir
-        <ArrowDown size={14} />
-      </a>
     </section>
   );
 }

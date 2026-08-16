@@ -87,7 +87,7 @@ export default function EmpresasPage() {
             ))}
           </div>
           <Reveal className="mt-9 flex justify-end">
-            <a href={whatsappUrl("Olá, Reynor! Quero conversar sobre uma palestra para minha empresa.")} target="_blank" rel="noreferrer" className="button-primary">Falar sobre palestras <MessageCircle size={16} /></a>
+            <a href={whatsappUrl("Olá, Reinor! Quero conversar sobre uma palestra para minha empresa.")} target="_blank" rel="noreferrer" className="button-primary">Falar sobre palestras <MessageCircle size={16} /></a>
           </Reveal>
         </div>
       </section>

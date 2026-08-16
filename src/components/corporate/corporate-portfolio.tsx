@@ -48,7 +48,7 @@ const portfolio = [
   },
 ];
 
-const proposalUrl = whatsappUrl("Olá, Reynor! Quero receber uma proposta de ações da Mãe Divina para minha empresa.");
+const proposalUrl = whatsappUrl("Olá, Reinor! Quero receber uma proposta de ações da Mãe Divina para minha empresa.");
 
 export function CorporatePortfolio() {
   return (
@@ -61,7 +61,7 @@ export function CorporatePortfolio() {
           </div>
           <div className="border border-ink/12 bg-[#fffaf5] p-5">
             <QRCodeSVG value={proposalUrl} size={138} fgColor="#24372d" bgColor="#fffaf5" className="mx-auto" />
-            <p className="mt-4 text-center text-[0.62rem] font-semibold uppercase text-terracotta">Escaneie para falar com Reynor</p>
+            <p className="mt-4 text-center text-[0.62rem] font-semibold uppercase text-terracotta">Escaneie para falar com Reinor</p>
           </div>
         </div>
 

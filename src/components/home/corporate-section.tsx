@@ -10,24 +10,24 @@ export function CorporateSection() {
       <div className="content-shell grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <Reveal className="relative min-h-[500px] overflow-hidden md:min-h-[650px]">
           <Image
-            src="/images/pratica-em-dupla.jpg"
-            alt="Prática de confiança e colaboração ao ar livre"
+            src="/images/reinor-namaste.jpg"
+            alt="Reinor em namastê durante uma prática guiada"
             fill
             sizes="(max-width: 1024px) 100vw, 48vw"
-            className="object-cover object-[55%_center]"
+            className="object-cover object-[center_25%]"
           />
           <div className="absolute inset-0 bg-[rgba(50,25,15,0.12)]" />
           <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-[rgba(37,46,38,0.86)] p-6 backdrop-blur-sm">
             <div>
               <p className="text-[0.6rem] font-semibold uppercase text-gold">Contato empresas</p>
-              <p className="mt-1 font-display text-2xl">Projetos com Reynor</p>
+              <p className="mt-1 font-display text-2xl">Projetos com Reinor</p>
             </div>
             <a
-              href={whatsappUrl("Olá, Reynor! Quero conversar sobre as soluções da Mãe Divina para empresas.")}
+              href={whatsappUrl("Olá, Reinor! Quero conversar sobre as soluções da Mãe Divina para empresas.")}
               target="_blank"
               rel="noreferrer"
               className="flex h-12 w-12 items-center justify-center rounded-full bg-[#fffaf5] text-terracotta"
-              aria-label="Falar com Reynor pelo WhatsApp"
+              aria-label="Falar com Reinor pelo WhatsApp"
             >
               <MessageCircle size={19} />
             </a>

@@ -1,8 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowLeft, ArrowRight, Check, MessageCircle } from "lucide-react";
-import { FormEvent, useMemo, useState } from "react";
+import { ArrowLeft, ArrowRight, Check, MessageCircle, Pencil } from "lucide-react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 type Answers = {
@@ -32,6 +32,23 @@ export function AnamnesisSection() {
   const [answers, setAnswers] = useState(initialAnswers);
   const total = 6;
 
+  const nameRef = useRef<HTMLInputElement>(null);
+  const healthRef = useRef<HTMLTextAreaElement>(null);
+  // Evita o autofoco na montagem: ele forçaria o navegador a rolar a página
+  // direto para esta seção ao abrir a landing page.
+  const hasNavigated = useRef(false);
+
+  useEffect(() => {
+    if (!hasNavigated.current) return;
+    if (step === 0) nameRef.current?.focus({ preventScroll: true });
+    if (step === 3) healthRef.current?.focus({ preventScroll: true });
+  }, [step]);
+
+  const goToStep = (next: number) => {
+    hasNavigated.current = true;
+    setStep(next);
+  };
+
   const canAdvance = useMemo(() => {
     if (step === 0) return answers.name.trim().length >= 2;
     if (step === 1) return Boolean(answers.experience);
@@ -49,7 +66,7 @@ export function AnamnesisSection() {
     event.preventDefault();
     if (!canAdvance) return;
     if (step < total - 1) {
-      setStep((current) => current + 1);
+      goToStep(step + 1);
       return;
     }
 
@@ -68,11 +85,20 @@ export function AnamnesisSection() {
     window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
   };
 
+  const counter = (
+    <>
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold/50 text-gold">
+        {step + 1}
+      </span>
+      <span>de {total} · menos de 2 minutos</span>
+    </>
+  );
+
   return (
     <section id="aula-gratis" className="relative overflow-hidden bg-forest py-24 text-white md:py-36">
-      <div className="absolute bottom-0 left-[8%] top-0 w-px bg-white/8" />
-      <div className="absolute bottom-0 right-[8%] top-0 w-px bg-white/8" />
-      <div className="content-shell relative grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="absolute bottom-0 left-[8%] top-0 hidden w-px bg-white/8 lg:block" />
+      <div className="absolute bottom-0 right-[8%] top-0 hidden w-px bg-white/8 lg:block" />
+      <div className="content-shell relative grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-14">
         <div>
           <span className="eyebrow !text-gold">Sua primeira prática</span>
           <h2 className="display-title mt-6 text-[3.4rem] sm:text-[4.6rem] lg:text-[6.5rem] text-[#fffaf5]">
@@ -81,16 +107,11 @@ export function AnamnesisSection() {
           <p className="mt-7 max-w-lg text-sm leading-7 text-white/68 md:text-base">
             Responda uma pergunta por vez. Ao final, sua ficha será preparada em uma mensagem para você enviar diretamente pelo WhatsApp.
           </p>
-          <div className="mt-10 flex items-center gap-4 text-xs text-white/48">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 text-gold">
-              {step + 1}
-            </span>
-            <span>de {total} · menos de 2 minutos</span>
-          </div>
+          <div className="mt-10 hidden items-center gap-4 text-xs text-white/48 lg:flex">{counter}</div>
         </div>
 
         <form onSubmit={submit} className="border-t border-white/20 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-          <div className="mb-10 flex gap-2" aria-hidden="true">
+          <div className="mb-8 flex gap-2 lg:mb-10" aria-hidden="true">
             {Array.from({ length: total }).map((_, index) => (
               <span
                 key={index}
@@ -99,7 +120,7 @@ export function AnamnesisSection() {
             ))}
           </div>
 
-          <div className="min-h-[360px]">
+          <div className="lg:min-h-[360px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={step}
@@ -110,16 +131,24 @@ export function AnamnesisSection() {
               >
                 {step === 0 ? (
                   <Question title="Como podemos chamar você?" helper="Seu primeiro nome já é suficiente.">
-                    <label className="screen-reader-only" htmlFor="anamnesis-name">Nome</label>
-                    <input
-                      id="anamnesis-name"
-                      autoFocus
-                      value={answers.name}
-                      onChange={(event) => setValue("name", event.target.value)}
-                      placeholder="Digite seu nome"
-                      autoComplete="given-name"
-                      className="mt-10 w-full border-b border-white/35 bg-transparent pb-4 font-display text-4xl text-white placeholder:text-white/25 focus:border-gold focus:outline-none md:text-5xl"
-                    />
+                    <div className="mt-7 lg:mt-10">
+                      <label
+                        htmlFor="anamnesis-name"
+                        className="flex items-center gap-2 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-gold"
+                      >
+                        <Pencil size={12} />
+                        Seu nome
+                      </label>
+                      <input
+                        id="anamnesis-name"
+                        ref={nameRef}
+                        value={answers.name}
+                        onChange={(event) => setValue("name", event.target.value)}
+                        placeholder="Digite aqui seu nome"
+                        autoComplete="given-name"
+                        className="mt-3 w-full rounded-sm border border-white/30 bg-white/[0.06] px-4 py-4 font-display text-3xl text-white placeholder:font-sans placeholder:text-base placeholder:text-white/35 focus:border-gold focus:bg-white/[0.09] focus:outline-none sm:text-4xl md:text-5xl lg:mt-4 lg:border-0 lg:border-b lg:bg-transparent lg:px-0 lg:pb-4 lg:pt-2 lg:focus:bg-transparent"
+                      />
+                    </div>
                   </Question>
                 ) : null}
 
@@ -148,16 +177,24 @@ export function AnamnesisSection() {
                     title="Há alguma condição, dor ou cuidado importante?"
                     helper="Se não houver, escreva “não”. Isso ajuda a professora a receber você com segurança."
                   >
-                    <label className="screen-reader-only" htmlFor="anamnesis-health">Cuidados de saúde</label>
-                    <textarea
-                      id="anamnesis-health"
-                      autoFocus
-                      value={answers.health}
-                      onChange={(event) => setValue("health", event.target.value)}
-                      placeholder="Conte apenas o que for relevante para a prática"
-                      rows={4}
-                      className="mt-8 w-full resize-none border border-white/25 bg-white/[0.04] p-4 text-sm leading-7 text-white placeholder:text-white/30 focus:border-gold focus:outline-none"
-                    />
+                    <div className="mt-7 lg:mt-8">
+                      <label
+                        htmlFor="anamnesis-health"
+                        className="flex items-center gap-2 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-gold"
+                      >
+                        <Pencil size={12} />
+                        Escreva sua resposta
+                      </label>
+                      <textarea
+                        id="anamnesis-health"
+                        ref={healthRef}
+                        value={answers.health}
+                        onChange={(event) => setValue("health", event.target.value)}
+                        placeholder="Ex.: dor lombar, cirurgia recente… ou apenas “não”."
+                        rows={4}
+                        className="mt-3 w-full resize-none rounded-sm border border-white/30 bg-white/[0.06] p-4 text-sm leading-7 text-white placeholder:text-white/35 focus:border-gold focus:bg-white/[0.09] focus:outline-none"
+                      />
+                    </div>
                   </Question>
                 ) : null}
 
@@ -173,7 +210,7 @@ export function AnamnesisSection() {
 
                 {step === 5 ? (
                   <Question title={`Tudo certo, ${answers.name}.`} helper="Sua ficha não é armazenada pelo site.">
-                    <label className="mt-10 flex cursor-pointer items-start gap-4 border border-white/20 p-5">
+                    <label className="mt-7 flex cursor-pointer items-start gap-4 border border-white/20 p-5 lg:mt-10">
                       <input
                         type="checkbox"
                         checked={answers.consent}
@@ -190,10 +227,10 @@ export function AnamnesisSection() {
             </AnimatePresence>
           </div>
 
-          <div className="mt-8 flex items-center justify-between gap-4 border-t border-white/15 pt-6">
+          <div className="mt-7 flex items-center justify-between gap-4 border-t border-white/15 pt-6 lg:mt-8">
             <button
               type="button"
-              onClick={() => setStep((current) => Math.max(0, current - 1))}
+              onClick={() => goToStep(Math.max(0, step - 1))}
               disabled={step === 0}
               className="flex min-h-11 items-center gap-2 text-xs font-semibold uppercase text-white/62 transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-25"
             >
@@ -216,6 +253,8 @@ export function AnamnesisSection() {
               )}
             </button>
           </div>
+
+          <div className="mt-6 flex items-center gap-4 text-xs text-white/48 lg:hidden">{counter}</div>
         </form>
       </div>
     </section>
@@ -250,7 +289,7 @@ function Options({
   onSelect: (value: string) => void;
 }) {
   return (
-    <div className="mt-9 grid gap-2 sm:grid-cols-2" role="radiogroup">
+    <div className="mt-7 grid gap-2 sm:grid-cols-2 lg:mt-9" role="radiogroup">
       {options.map((option) => {
         const isSelected = option === selected;
         return (

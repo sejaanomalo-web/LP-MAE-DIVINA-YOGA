@@ -37,11 +37,11 @@ export function HouseSection() {
         <div className="mt-16 grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
           <Reveal className="relative min-h-[470px] overflow-hidden md:min-h-[620px]">
             <Image
-              src="/images/carol-retrato.jpg"
+              src="/images/carol-cha.jpg"
               alt="Carol, professora da Mãe Divina Yôga"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover object-[center_38%]"
+              className="object-cover object-[center_28%]"
             />
             <div className="absolute inset-x-0 bottom-0 bg-[rgba(25,36,29,0.8)] p-6 text-white backdrop-blur-sm">
               <p className="font-display text-3xl font-medium">Carol</p>
@@ -63,15 +63,31 @@ export function HouseSection() {
                 Um ambiente pensado para você baixar a guarda.
               </p>
             </Reveal>
-            <Reveal delay={0.14} className="flex min-h-[280px] flex-col justify-between bg-terracotta p-7 text-white md:p-9">
-              <span className="text-[0.65rem] font-semibold uppercase text-white/58">Missão</span>
-              <p className="font-display text-[2rem] leading-[1.05] md:text-[2.5rem]">
+            <Reveal delay={0.14} className="relative flex min-h-[280px] flex-col justify-between overflow-hidden bg-terracotta p-7 text-white md:p-9">
+              <Image
+                src="/images/missao-maos.jpg"
+                alt="Mãos unidas em namastê durante a prática"
+                fill
+                sizes="(max-width: 640px) 100vw, 29vw"
+                className="object-cover object-[center_35%]"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(120,55,32,0.62)_0%,rgba(166,86,53,0.42)_45%,rgba(103,45,25,0.9)_100%)]" />
+              <span className="relative text-[0.65rem] font-semibold uppercase text-white/78">Missão</span>
+              <p className="relative font-display text-[2rem] leading-[1.05] md:text-[2.5rem]">
                 Cuidar do ser por inteiro, com profundidade e gentileza.
               </p>
             </Reveal>
-            <Reveal delay={0.2} className="flex min-h-[280px] flex-col justify-between border border-terracotta/25 bg-sand p-7 md:p-9">
-              <span className="text-[0.65rem] font-semibold uppercase text-terracotta">Visão</span>
-              <p className="font-display text-[2rem] leading-[1.05] text-ink md:text-[2.5rem]">
+            <Reveal delay={0.2} className="relative flex min-h-[280px] flex-col justify-between overflow-hidden border border-terracotta/25 bg-sand p-7 text-white md:p-9">
+              <Image
+                src="/images/visao-altar.jpg"
+                alt="Carol acendendo incenso no altar da casa"
+                fill
+                sizes="(max-width: 640px) 100vw, 29vw"
+                className="object-cover object-[center_40%]"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,36,28,0.62)_0%,rgba(28,40,31,0.4)_45%,rgba(20,31,24,0.92)_100%)]" />
+              <span className="relative text-[0.65rem] font-semibold uppercase text-gold">Visão</span>
+              <p className="relative font-display text-[2rem] leading-[1.05] md:text-[2.5rem]">
                 Uma comunidade mais presente, consciente e humana.
               </p>
             </Reveal>
