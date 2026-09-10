@@ -6,6 +6,7 @@ import { PageHero } from "@/components/ui/page-hero";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
@@ -114,6 +115,8 @@ export default function NossaCasaPage() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       <section className="bg-paper py-20 md:py-28">
         <Reveal className="content-shell flex flex-col gap-8 md:flex-row md:items-center md:justify-between">

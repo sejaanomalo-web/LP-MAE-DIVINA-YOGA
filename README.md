@@ -20,7 +20,8 @@ npm run build
 
 ## Conteúdo centralizado
 
-- `src/data/site.ts`: contatos, navegação, banners, depoimentos e horários.
+- `src/data/site.ts`: contatos, navegação, banners e depoimentos.
+- `src/data/class-schedule.ts`: agenda padrão de aulas e texto de apresentação.
 - `src/data/events.ts`: agenda inicial e detalhes dos eventos.
 - `src/data/products.ts`: catálogo e briefing fotográfico de cada produto.
 - `src/lib/whatsapp.ts`: criação dos links e mensagens de WhatsApp.
@@ -29,13 +30,15 @@ npm run build
 
 O painel em `/admin/eventos` permite criar, editar, excluir, importar e exportar eventos. No primeiro escopo, os rascunhos ficam no `localStorage` do navegador. O contrato `YogaEvent` e o armazenamento estão isolados para futura conexão com Supabase ou CMS sem refazer a interface pública.
 
+O painel em `/admin/agenda` permite ao Reinor editar a apresentação e a grade de aulas, salvar um rascunho no dispositivo e gerar um link portátil para enviar às alunas. Cada link contém a versão publicada da programação e abre em `/agenda`, sem depender do armazenamento do navegador de quem recebe.
+
 ## Informações que precisam de validação
 
 - Biografias, formações e fotografias de Cadu e Reynor.
 - Todos os contatos de WhatsApp de Reynor.
 - Link oficial do YouTube.
 - Datas, horários, valores e locais definitivos dos eventos.
-- Nomes “Hofra”, “De Ferra”, “OMC”, “MIDI Funis” e “T.A.E.” conforme a nomenclatura oficial.
+- Nomes “Hofra”, “OMC”, “MIDI Funis” e “T.A.E.” conforme a nomenclatura oficial.
 - Produtos, variações, preços, estoque e regras comerciais.
 - Arquivo de persona citado no briefing, mas não encontrado na pasta.
 - Arquivo final da logo. A versão atual foi recuperada do site público anterior e deve ser substituída pelo original quando disponibilizado.

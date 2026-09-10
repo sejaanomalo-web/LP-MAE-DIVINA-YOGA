@@ -38,6 +38,7 @@ export const navigation: NavigationItem[] = [
     href: "/contato",
     items: [
       { label: "Horários", href: "/contato#horarios", description: "Grade semanal de práticas" },
+      { label: "Agenda de aulas", href: "/agenda", description: "Veja dias, horários e orientações" },
       { label: "Zap", href: `https://wa.me/${siteContact.whatsappNumber}`, description: "Converse com a nossa equipe" },
       { label: "Insta", href: siteContact.instagram, description: "Acompanhe a casa por perto" },
       { label: "YouTube", href: "/contato#youtube", description: "Canal em preparação" },
@@ -50,27 +51,25 @@ export const navigation: NavigationItem[] = [
     label: "Eventos",
     href: "/eventos",
     items: [
-      { label: "Tardes", href: "/eventos?tema=tardes" },
-      { label: "Pranayama", href: "/eventos?tema=pranayama" },
-      { label: "Agni", href: "/eventos?tema=agni" },
-      { label: "Hofra", href: "/eventos?tema=hofra" },
-      { label: "Bhagavad Gita", href: "/eventos?tema=bhagavad-gita" },
-      { label: "Feminino", href: "/eventos?tema=feminino" },
-      { label: "De Ferra", href: "/eventos?tema=de-ferra" },
-      { label: "Retiro", href: "/eventos?tema=retiro" },
+      { label: "Oficina de Pranayama", href: "/eventos/oficina-de-pranayama" },
+      { label: "Sangha de Estudos", href: "/eventos/sangha-de-estudos" },
+      { label: "Vivência do Feminino", href: "/eventos/vivencia-do-feminino" },
+      { label: "Retiro Mãe Divina", href: "/eventos/retiro-mae-divina" },
+      { label: "Agni: noite de presença", href: "/eventos/agni-noite-de-presenca" },
+      { label: "Outros eventos", href: "/eventos", description: "Veja o calendário completo" },
     ],
   },
   {
-    label: "Edificações",
-    href: "/edificacoes",
+    label: "Meditações",
+    href: "/meditacoes",
     items: [
-      { label: "OMC", href: "/edificacoes#omc" },
-      { label: "Oficina de Meditação", href: "/edificacoes#oficina-de-meditacao" },
-      { label: "Estudos", href: "/edificacoes#estudos" },
-      { label: "SEVA", href: "/edificacoes#seva" },
-      { label: "Eventos Gratuitos", href: "/edificacoes#eventos-gratuitos" },
-      { label: "Osho", href: "/edificacoes#osho" },
-      { label: "Sangha", href: "/edificacoes#sangha" },
+      { label: "Oficina de Meditação", href: "/meditacoes#oficina-de-meditacao" },
+      { label: "OMC", href: "/meditacoes#omc" },
+      { label: "Osho", href: "/meditacoes#osho" },
+      { label: "Sangha", href: "/meditacoes#sangha" },
+      { label: "Estudos", href: "/meditacoes#estudos" },
+      { label: "SEVA", href: "/meditacoes#seva" },
+      { label: "Eventos Gratuitos", href: "/meditacoes#eventos-gratuitos" },
     ],
   },
   {
@@ -105,6 +104,7 @@ export const heroSlides = [
     alt: "Turma praticando a postura do guerreiro no espaço Mãe Divina",
     position: "center 32%",
     positionMobile: "62% 30%",
+    fit: "cover",
   },
   {
     eyebrow: "Yoga, meditação e vivências conscientes",
@@ -114,6 +114,7 @@ export const heroSlides = [
     alt: "Carol em postura meditativa ao ar livre",
     position: "center 30%",
     positionMobile: "center 25%",
+    fit: "contain",
   },
   {
     eyebrow: "Corpo, confiança e encontro",
@@ -123,6 +124,7 @@ export const heroSlides = [
     alt: "Prática de yoga em dupla ao ar livre",
     position: "center 30%",
     positionMobile: "55% 28%",
+    fit: "contain",
   },
   {
     eyebrow: "Há oito anos em Cascavel",
@@ -132,6 +134,7 @@ export const heroSlides = [
     alt: "Praticante em namastê durante aula na Mãe Divina Yôga",
     position: "center 8%",
     positionMobile: "center 16%",
+    fit: "contain",
   },
 ] as const;
 
@@ -151,12 +154,4 @@ export const testimonials = [
     quote:
       "Trabalhamos corpo, mente e espírito em busca de flexibilidade, força, coragem, equilíbrio, consciência corporal e paz interior. Isso ajuda a atravessar melhor os obstáculos do dia a dia.",
   },
-] as const;
-
-export const indicativeSchedule = [
-  { day: "Segunda", times: ["19h40 - 20h45"] },
-  { day: "Terça", times: ["Consulte novas turmas"] },
-  { day: "Quarta", times: ["18h30 - 19h40", "19h45 - 20h45"] },
-  { day: "Quinta", times: ["16h - 17h", "18h30 - 19h30"] },
-  { day: "Sexta", times: ["Vivências e agenda especial"] },
 ] as const;

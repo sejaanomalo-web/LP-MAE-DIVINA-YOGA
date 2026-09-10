@@ -48,18 +48,28 @@ export function HeroCarousel() {
         <motion.div
           key={slide.image}
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.035 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
+          {slide.fit === "contain" ? (
+            <Image
+              src={slide.image}
+              alt=""
+              fill
+              sizes="100vw"
+              className="scale-110 object-cover opacity-25 blur-xl"
+              aria-hidden="true"
+            />
+          ) : null}
           <Image
             src={slide.image}
             alt={slide.alt}
             fill
             priority={active === 0}
             sizes="100vw"
-            className="object-cover"
+            className={slide.fit === "contain" ? "object-contain" : "object-cover"}
             style={{ objectPosition: isMobile ? slide.positionMobile : slide.position }}
           />
         </motion.div>

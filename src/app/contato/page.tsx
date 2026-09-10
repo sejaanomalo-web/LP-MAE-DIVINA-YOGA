@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { ArrowRight, AtSign, MapPin, MessageCircle, Play } from "lucide-react";
+import { ArrowRight, AtSign, CalendarDays, MapPin, MessageCircle, Play } from "lucide-react";
 import Link from "next/link";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/ui/reveal";
-import { indicativeSchedule, siteContact } from "@/data/site";
+import { defaultClassSchedule } from "@/data/class-schedule";
+import { siteContact } from "@/data/site";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
@@ -27,15 +28,19 @@ export default function ContatoPage() {
           <Reveal>
             <p className="eyebrow">Horários</p>
             <h2 className="display-title mt-6 text-[3.4rem] sm:text-[4.6rem] lg:text-[6.5rem]">Escolha um espaço na semana para você.</h2>
-            <p className="mt-7 text-xs leading-6 text-ink-soft">Grade indicativa. Turmas, vagas e horários podem mudar; confirme sempre pelo WhatsApp.</p>
-            <a href={whatsappUrl("Olá! Quero receber a grade atual de aulas da Mãe Divina Yôga.")} target="_blank" rel="noreferrer" className="button-primary mt-8">Receber grade atual <MessageCircle size={15} /></a>
+            <p className="mt-7 text-xs leading-6 text-ink-soft">Consulte a agenda completa, veja as orientações da equipe e confirme sua vaga pelo WhatsApp.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/agenda" className="button-primary">Ver agenda atual <CalendarDays size={15} /></Link>
+              <a href={whatsappUrl("Olá! Quero receber a grade atual de aulas da Mãe Divina Yôga.")} target="_blank" rel="noreferrer" className="button-primary !bg-forest">Falar com a equipe <MessageCircle size={15} /></a>
+            </div>
           </Reveal>
           <div className="border-t border-ink/15">
-            {indicativeSchedule.map((item, index) => (
-              <Reveal key={item.day} delay={index * 0.05} className="grid grid-cols-[110px_1fr] gap-5 border-b border-ink/15 py-6 md:grid-cols-[170px_1fr]">
-                <p className="font-display text-2xl font-semibold">{item.day}</p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-ink-soft">
-                  {item.times.map((time) => <span key={time}>{time}</span>)}
+            {defaultClassSchedule.slots.map((slot, index) => (
+              <Reveal key={slot.id} delay={index * 0.05} className="grid grid-cols-[110px_1fr] gap-5 border-b border-ink/15 py-6 md:grid-cols-[170px_1fr]">
+                <p className="font-display text-2xl font-semibold">{slot.day.replace("-feira", "")}</p>
+                <div className="text-xs text-ink-soft">
+                  <p>{slot.time}</p>
+                  <p className="mt-1 font-semibold text-ink">{slot.activity}</p>
                 </div>
               </Reveal>
             ))}

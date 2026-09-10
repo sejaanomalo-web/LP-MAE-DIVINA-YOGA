@@ -10,7 +10,7 @@ Este documento mapeia as imagens definitivas necessárias para a publicação. O
 | `_NIC1630.jpg` | Carol, Nossa Casa e Vivência do Feminino | Bom retrato vertical, expressão acolhedora e ótima leitura mobile. Manter. |
 | `_NIC1603.jpg` | Eventos, confiança e soluções para empresas | Cena forte e dinâmica. Buscar também uma versão horizontal mais aberta. |
 | `IMG_1055.jpg` | Hero da casa, Contato e História | Melhor enquadramento do espaço por incluir luz, tapetes e profundidade. Manter. |
-| `IMG_1054.jpg` | Detalhes da casa, Edificações e Loja | Boa imagem de apoio, mas menos forte como banner principal. |
+| `IMG_1054.jpg` | Detalhes da casa, Meditações e Loja | Boa imagem de apoio, mas menos forte como banner principal. |
 
 ## Captação prioritária
 
