@@ -32,6 +32,14 @@ O painel em `/admin/eventos` permite criar, editar, excluir, importar e exportar
 
 O painel em `/admin/agenda` permite ao Reinor editar a apresentação e a grade de aulas, salvar um rascunho no dispositivo e gerar um link portátil para enviar às alunas. Cada link contém a versão publicada da programação e abre em `/agenda`, sem depender do armazenamento do navegador de quem recebe.
 
+## Fichas de aula experimental
+
+O formulário da landing page salva as respostas, com consentimento explícito, no projeto Supabase da Mãe Divina antes de abrir o WhatsApp. A tabela `public.anamnesis_leads` é criada pela migração em `supabase/migrations`; o acesso público direto à tabela é bloqueado por RLS e permissões. O painel `/admin/leads` mostra as fichas recentes e permite navegar por páginas.
+
+Configure no servidor `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `LEADS_ACCESS_TOKEN_HASH` (SHA-256 do token privado) e `LEADS_SESSION_SECRET` (valor aleatório forte). Nenhuma dessas variáveis deve ter prefixo `NEXT_PUBLIC_`. O link dos responsáveis tem formato `https://<domínio>/admin/leads#access=<token>`; o token é removido da barra de endereço após a abertura e gera uma sessão de oito horas em cookie HttpOnly. Não há envio por e-mail.
+
+O link funciona como credencial: qualquer pessoa que o receba pode consultar dados sensíveis das fichas. Compartilhe-o apenas com os responsáveis por canal confiável. Para revogar o link e as sessões existentes, gere outro token e atualize `LEADS_ACCESS_TOKEN_HASH` no servidor. Considere uma política de retenção/exclusão dessas informações antes de ampliar a divulgação do formulário.
+
 ## Informações que precisam de validação
 
 - Biografias, formações e fotografias de Cadu e Reynor.
