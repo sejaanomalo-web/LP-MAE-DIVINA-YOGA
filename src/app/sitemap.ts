@@ -11,7 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/eventos",
     "/empresas",
     "/loja",
-    "/edificacoes",
+    "/meditacoes",
+    "/agenda",
     "/contato",
   ];
 

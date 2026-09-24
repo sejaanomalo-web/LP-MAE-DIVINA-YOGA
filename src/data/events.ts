@@ -119,6 +119,5 @@ export const eventCategories = [
   { value: "hofra", label: "Hofra" },
   { value: "bhagavad-gita", label: "Bhagavad Gita" },
   { value: "feminino", label: "Feminino" },
-  { value: "de-ferra", label: "De Ferra" },
   { value: "retiro", label: "Retiro" },
 ] as const;

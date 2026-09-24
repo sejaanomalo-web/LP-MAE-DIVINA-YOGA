@@ -30,6 +30,10 @@ const periodOptions = ["Manhã", "Tarde", "Noite", "Quero ver a grade"];
 export function AnamnesisSection() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState(initialAnswers);
+  const [website, setWebsite] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [fallbackUrl, setFallbackUrl] = useState("");
   const total = 6;
 
   const nameRef = useRef<HTMLInputElement>(null);
@@ -50,10 +54,10 @@ export function AnamnesisSection() {
   };
 
   const canAdvance = useMemo(() => {
-    if (step === 0) return answers.name.trim().length >= 2;
+    if (step === 0) return answers.name.trim().length >= 2 && answers.name.trim().length <= 120;
     if (step === 1) return Boolean(answers.experience);
     if (step === 2) return Boolean(answers.goal);
-    if (step === 3) return answers.health.trim().length >= 2;
+    if (step === 3) return answers.health.trim().length >= 2 && answers.health.trim().length <= 1000;
     if (step === 4) return Boolean(answers.period);
     return answers.consent;
   }, [answers, step]);
@@ -62,9 +66,9 @@ export function AnamnesisSection() {
     setAnswers((current) => ({ ...current, [key]: value }));
   };
 
-  const submit = (event: FormEvent) => {
+  const submit = async (event: FormEvent) => {
     event.preventDefault();
-    if (!canAdvance) return;
+    if (!canAdvance || submitting) return;
     if (step < total - 1) {
       goToStep(step + 1);
       return;
@@ -82,7 +86,24 @@ export function AnamnesisSection() {
       "Gostaria de agendar minha aula grátis.",
     ].join("\n");
 
-    window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
+    const whatsappLink = whatsappUrl(message);
+    setFallbackUrl(whatsappLink);
+    setSubmitError("");
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...answers, website }),
+      });
+      if (!response.ok) throw new Error("Lead submission failed");
+      window.location.assign(whatsappLink);
+    } catch {
+      setSubmitError("Não foi possível salvar sua ficha agora. Tente novamente ou converse diretamente pelo WhatsApp.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const counter = (
@@ -105,12 +126,22 @@ export function AnamnesisSection() {
             Antes da aula, uma pequena escuta.
           </h2>
           <p className="mt-7 max-w-lg text-sm leading-7 text-white/68 md:text-base">
-            Responda uma pergunta por vez. Ao final, sua ficha será preparada em uma mensagem para você enviar diretamente pelo WhatsApp.
+            Responda uma pergunta por vez. Com sua autorização, a ficha será salva para a equipe e você poderá continuar a conversa pelo WhatsApp.
           </p>
           <div className="mt-10 hidden items-center gap-4 text-xs text-white/48 lg:flex">{counter}</div>
         </div>
 
         <form onSubmit={submit} className="border-t border-white/20 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+          <input
+            type="text"
+            name="website"
+            value={website}
+            onChange={(event) => setWebsite(event.target.value)}
+            autoComplete="off"
+            tabIndex={-1}
+            aria-hidden="true"
+            className="absolute -left-[9999px]"
+          />
           <div className="mb-8 flex gap-2 lg:mb-10" aria-hidden="true">
             {Array.from({ length: total }).map((_, index) => (
               <span
@@ -144,6 +175,7 @@ export function AnamnesisSection() {
                         ref={nameRef}
                         value={answers.name}
                         onChange={(event) => setValue("name", event.target.value)}
+                        maxLength={120}
                         placeholder="Digite aqui seu nome"
                         autoComplete="given-name"
                         className="mt-3 w-full rounded-sm border border-white/30 bg-white/[0.06] px-4 py-4 font-display text-3xl text-white placeholder:font-sans placeholder:text-base placeholder:text-white/35 focus:border-gold focus:bg-white/[0.09] focus:outline-none sm:text-4xl md:text-5xl lg:mt-4 lg:border-0 lg:border-b lg:bg-transparent lg:px-0 lg:pb-4 lg:pt-2 lg:focus:bg-transparent"
@@ -190,6 +222,7 @@ export function AnamnesisSection() {
                         ref={healthRef}
                         value={answers.health}
                         onChange={(event) => setValue("health", event.target.value)}
+                        maxLength={1000}
                         placeholder="Ex.: dor lombar, cirurgia recente… ou apenas “não”."
                         rows={4}
                         className="mt-3 w-full resize-none rounded-sm border border-white/30 bg-white/[0.06] p-4 text-sm leading-7 text-white placeholder:text-white/35 focus:border-gold focus:bg-white/[0.09] focus:outline-none"
@@ -209,7 +242,7 @@ export function AnamnesisSection() {
                 ) : null}
 
                 {step === 5 ? (
-                  <Question title={`Tudo certo, ${answers.name}.`} helper="Sua ficha não é armazenada pelo site.">
+                  <Question title={`Tudo certo, ${answers.name}.`} helper="Sua ficha será salva apenas com sua autorização.">
                     <label className="mt-7 flex cursor-pointer items-start gap-4 border border-white/20 p-5 lg:mt-10">
                       <input
                         type="checkbox"
@@ -218,7 +251,7 @@ export function AnamnesisSection() {
                         className="mt-1 h-4 w-4 accent-[#c4923f]"
                       />
                       <span className="text-xs leading-6 text-white/68">
-                        Autorizo a criação da mensagem com minhas respostas para envio voluntário à equipe da Mãe Divina pelo WhatsApp.
+                        Autorizo a Mãe Divina Yôga a armazenar minhas respostas, inclusive a informação sobre saúde que forneci, para organizar minha aula experimental. Também poderei enviar a mensagem à equipe pelo WhatsApp.
                       </span>
                     </label>
                   </Question>
@@ -239,12 +272,12 @@ export function AnamnesisSection() {
             </button>
             <button
               type="submit"
-              disabled={!canAdvance}
+              disabled={!canAdvance || submitting}
               className="button-light disabled:cursor-not-allowed disabled:opacity-35"
             >
               {step === total - 1 ? (
                 <>
-                  Abrir WhatsApp <MessageCircle size={16} />
+                  {submitting ? "Salvando..." : "Salvar e abrir WhatsApp"} <MessageCircle size={16} />
                 </>
               ) : (
                 <>
@@ -253,6 +286,15 @@ export function AnamnesisSection() {
               )}
             </button>
           </div>
+
+          {submitError ? (
+            <div role="alert" className="mt-5 border border-[#efc66d]/50 p-4 text-sm leading-6 text-white">
+              <p>{submitError}</p>
+              <a href={fallbackUrl} target="_blank" rel="noreferrer" className="mt-2 inline-block font-semibold text-[#efc66d] underline">
+                Conversar sem salvar a ficha
+              </a>
+            </div>
+          ) : null}
 
           <div className="mt-6 flex items-center gap-4 text-xs text-white/48 lg:hidden">{counter}</div>
         </form>

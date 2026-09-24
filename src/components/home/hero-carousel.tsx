@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { heroSlides } from "@/data/site";
@@ -35,6 +35,14 @@ export function HeroCarousel() {
   };
 
   const slide = heroSlides[active];
+  const {
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({
+    src: slide.imageMobile,
+    alt: slide.altMobile,
+    fill: true,
+    sizes: "100vw",
+  });
 
   return (
     <section
@@ -48,20 +56,34 @@ export function HeroCarousel() {
         <motion.div
           key={slide.image}
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.035 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Image
-            src={slide.image}
-            alt={slide.alt}
-            fill
-            priority={active === 0}
-            sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: isMobile ? slide.positionMobile : slide.position }}
-          />
+          {slide.fit === "contain" ? (
+            <Image
+              src={slide.image}
+              alt=""
+              fill
+              sizes="100vw"
+              className="hidden scale-110 object-cover opacity-25 blur-xl md:block"
+              aria-hidden="true"
+            />
+          ) : null}
+          <picture>
+            <source media="(max-width: 767px)" srcSet={mobileSrcSet} sizes="100vw" />
+            <Image
+              src={slide.image}
+              alt={isMobile ? slide.altMobile : slide.alt}
+              fill
+              loading={active === 0 ? "eager" : "lazy"}
+              fetchPriority={active === 0 ? "high" : "auto"}
+              sizes="100vw"
+              className={slide.fit === "contain" ? "object-cover md:object-contain" : "object-cover"}
+              style={{ objectPosition: isMobile ? slide.positionMobile : slide.position }}
+            />
+          </picture>
         </motion.div>
       </AnimatePresence>
 
