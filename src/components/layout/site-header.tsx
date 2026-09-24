@@ -24,7 +24,7 @@ export function SiteHeader() {
   }, [mobileOpen]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[rgba(28,45,36,0.94)] text-white backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[rgba(24,39,31,0.97)] text-white">
       <div className="site-shell flex h-[82px] items-center justify-between gap-5">
         <Link
           href="/"

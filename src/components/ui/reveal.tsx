@@ -11,15 +11,15 @@ type RevealProps = {
   id?: string;
 };
 
-export function Reveal({ children, className, delay = 0, y = 28, id }: RevealProps) {
+export function Reveal({ children, className, delay = 0, y = 12, id }: RevealProps) {
   return (
     <motion.div
       id={id}
       className={className}
-      initial={{ opacity: 0, y }}
+      initial={{ opacity: 0.82, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18, margin: "0px 0px -50px" }}
-      transition={{ duration: 0.68, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.01, margin: "0px 0px 160px 0px" }}
+      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

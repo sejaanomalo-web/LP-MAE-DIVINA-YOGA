@@ -48,7 +48,7 @@ const highlights = [
 
 export function QuickAccessSection() {
   return (
-    <section aria-labelledby="acessos-title" className="bg-paper py-20 md:py-28">
+    <section aria-labelledby="acessos-title" className="bg-paper pb-0 pt-16 md:py-28">
       <div className="site-shell">
         <Reveal className="flex flex-col gap-6 border-b border-ink/15 pb-10 md:flex-row md:items-end md:justify-between">
           <div>

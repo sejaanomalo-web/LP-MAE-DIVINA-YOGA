@@ -24,8 +24,13 @@ const values = [
 
 export function HouseSection() {
   return (
-    <section id="nossa-casa" className="bg-paper py-24 md:py-36">
+    <section id="nossa-casa" className="bg-paper pb-20 pt-8 md:py-36">
       <div className="content-shell">
+        <div className="mb-8 flex items-center gap-4 text-terracotta/65 md:hidden" aria-hidden="true">
+          <span className="h-px flex-1 bg-terracotta/25" />
+          <Leaf size={19} strokeWidth={1.2} />
+          <span className="h-px flex-1 bg-terracotta/25" />
+        </div>
         <Reveal>
           <SectionHeading
             eyebrow="Nossa Casa"
