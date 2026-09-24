@@ -38,6 +38,7 @@
 }
 
 html {
+  background: #18271f;
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
 }
@@ -188,6 +189,16 @@ button {
   width: 1px;
 }
 
+.hero-image {
+  object-position: var(--hero-position-mobile);
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    object-position: var(--hero-position-desktop);
+  }
+}
+
 .admin-input {
   border: 1px solid rgba(43, 40, 37, 0.18);
   background: var(--paper);
@@ -225,5 +236,9 @@ button {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-slide {
+    transition: none !important;
   }
 }

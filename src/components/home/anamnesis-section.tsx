@@ -106,32 +106,22 @@ export function AnamnesisSection() {
     }
   };
 
-  const counter = (
-    <>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold/50 text-gold">
-        {step + 1}
-      </span>
-      <span>de {total} · menos de 2 minutos</span>
-    </>
-  );
-
   return (
-    <section id="aula-gratis" className="relative overflow-hidden bg-forest py-24 text-white md:py-36">
+    <section id="aula-gratis" className="relative overflow-hidden bg-forest py-16 text-white md:py-36">
       <div className="absolute bottom-0 left-[8%] top-0 hidden w-px bg-white/8 lg:block" />
       <div className="absolute bottom-0 right-[8%] top-0 hidden w-px bg-white/8 lg:block" />
-      <div className="content-shell relative grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-14">
+      <div className="content-shell relative grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-14">
         <div>
           <span className="eyebrow !text-gold">Sua primeira prática</span>
-          <h2 className="display-title mt-6 text-[3.4rem] sm:text-[4.6rem] lg:text-[6.5rem] text-[#fffaf5]">
+          <h2 className="display-title mt-5 text-[3rem] text-[#fffaf5] sm:text-[4.6rem] lg:mt-6 lg:text-[6.5rem]">
             Antes da aula, uma pequena escuta.
           </h2>
-          <p className="mt-7 max-w-lg text-sm leading-7 text-white/68 md:text-base">
+          <p className="mt-5 max-w-lg text-sm leading-7 text-white/72 md:mt-7 md:text-base">
             Responda uma pergunta por vez. Com sua autorização, a ficha será salva para a equipe e você poderá continuar a conversa pelo WhatsApp.
           </p>
-          <div className="mt-10 hidden items-center gap-4 text-xs text-white/48 lg:flex">{counter}</div>
         </div>
 
-        <form onSubmit={submit} className="border-t border-white/20 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+        <form onSubmit={submit} className="rounded-md border border-white/10 bg-[#2d4437] p-5 sm:p-8 lg:rounded-none lg:border-0 lg:border-l lg:border-white/20 lg:bg-transparent lg:px-0 lg:py-0 lg:pl-12">
           <input
             type="text"
             name="website"
@@ -142,23 +132,36 @@ export function AnamnesisSection() {
             aria-hidden="true"
             className="absolute -left-[9999px]"
           />
-          <div className="mb-8 flex gap-2 lg:mb-10" aria-hidden="true">
-            {Array.from({ length: total }).map((_, index) => (
-              <span
-                key={index}
-                className={`h-1 flex-1 transition-colors ${index <= step ? "bg-gold" : "bg-white/15"}`}
-              />
-            ))}
+          <div className="mb-7 flex items-center justify-between gap-5 lg:mb-10">
+            <span className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#efc66d]">
+              Pergunta {String(step + 1).padStart(2, "0")}
+            </span>
+            <div
+              className="flex items-center gap-2"
+              role="progressbar"
+              aria-label="Progresso da ficha"
+              aria-valuemin={1}
+              aria-valuemax={total}
+              aria-valuenow={step + 1}
+            >
+              {Array.from({ length: total }).map((_, index) => (
+                <span
+                  key={index}
+                  aria-hidden="true"
+                  className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${index === step ? "bg-[#efc66d]" : index < step ? "bg-[#efc66d]/55" : "bg-white/20"}`}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="lg:min-h-[360px]">
-            <AnimatePresence mode="wait">
+            <AnimatePresence initial={false} mode="popLayout">
               <motion.div
                 key={step}
-                initial={{ opacity: 0, x: 28 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.35 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 {step === 0 ? (
                   <Question title="Como podemos chamar você?" helper="Seu primeiro nome já é suficiente.">
@@ -260,12 +263,12 @@ export function AnamnesisSection() {
             </AnimatePresence>
           </div>
 
-          <div className="mt-7 flex items-center justify-between gap-4 border-t border-white/15 pt-6 lg:mt-8">
+          <div className="mt-7 flex flex-col-reverse gap-3 border-t border-white/12 pt-6 sm:flex-row sm:items-center sm:justify-between lg:mt-8">
             <button
               type="button"
               onClick={() => goToStep(Math.max(0, step - 1))}
               disabled={step === 0}
-              className="flex min-h-11 items-center gap-2 text-xs font-semibold uppercase text-white/62 transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-25"
+              className="flex min-h-11 items-center justify-center gap-2 text-xs font-semibold uppercase text-white/62 transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-25 sm:justify-start"
             >
               <ArrowLeft size={15} />
               Voltar
@@ -273,7 +276,7 @@ export function AnamnesisSection() {
             <button
               type="submit"
               disabled={!canAdvance || submitting}
-              className="button-light disabled:cursor-not-allowed disabled:opacity-35"
+              className="button-light w-full disabled:cursor-not-allowed disabled:opacity-35 sm:w-auto"
             >
               {step === total - 1 ? (
                 <>
@@ -296,7 +299,6 @@ export function AnamnesisSection() {
             </div>
           ) : null}
 
-          <div className="mt-6 flex items-center gap-4 text-xs text-white/48 lg:hidden">{counter}</div>
         </form>
       </div>
     </section>

@@ -4,10 +4,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import Image, { getImageProps } from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { heroSlides } from "@/data/site";
 
-const AUTOPLAY_DELAY = 3000;
+const AUTOPLAY_DELAY = 5500;
 
 export function HeroCarousel() {
   const [active, setActive] = useState(0);
@@ -24,80 +24,82 @@ export function HeroCarousel() {
 
   useEffect(() => {
     if (paused) return;
-    const timer = window.setInterval(() => {
+    const timer = window.setTimeout(() => {
       setActive((current) => (current + 1) % heroSlides.length);
     }, AUTOPLAY_DELAY);
-    return () => window.clearInterval(timer);
-  }, [paused]);
+    return () => window.clearTimeout(timer);
+  }, [active, paused]);
 
   const goTo = (index: number) => {
     setActive((index + heroSlides.length) % heroSlides.length);
   };
 
   const slide = heroSlides[active];
-  const {
-    props: { srcSet: mobileSrcSet },
-  } = getImageProps({
-    src: slide.imageMobile,
-    alt: slide.altMobile,
-    fill: true,
-    sizes: "100vw",
-  });
-
   return (
     <section
-      className="relative h-[calc(100svh-28px)] min-h-[640px] max-h-[900px] overflow-hidden bg-forest"
+      className="relative h-[calc(100svh-28px)] min-h-[640px] max-h-[900px] overflow-hidden bg-[#18271f]"
       aria-roledescription="carrossel"
       aria-label="Destaques da Mãe Divina Yôga"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={slide.image}
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {slide.fit === "contain" ? (
-            <Image
-              src={slide.image}
-              alt=""
-              fill
-              sizes="100vw"
-              className="hidden scale-110 object-cover opacity-25 blur-xl md:block"
-              aria-hidden="true"
-            />
-          ) : null}
-          <picture>
-            <source media="(max-width: 767px)" srcSet={mobileSrcSet} sizes="100vw" />
-            <Image
-              src={slide.image}
-              alt={isMobile ? slide.altMobile : slide.alt}
-              fill
-              loading={active === 0 ? "eager" : "lazy"}
-              fetchPriority={active === 0 ? "high" : "auto"}
-              sizes="100vw"
-              className={slide.fit === "contain" ? "object-cover md:object-contain" : "object-cover"}
-              style={{ objectPosition: isMobile ? slide.positionMobile : slide.position }}
-            />
-          </picture>
-        </motion.div>
-      </AnimatePresence>
+      {heroSlides.map((item, index) => {
+        const {
+          props: { srcSet: mobileSrcSet },
+        } = getImageProps({ src: item.imageMobile, alt: item.altMobile, fill: true, sizes: "100vw" });
+        const isActive = active === index;
+
+        return (
+          <div
+            key={item.image}
+            className="hero-slide absolute inset-0"
+            aria-hidden={!isActive}
+            style={{
+              opacity: isActive ? 1 : 0,
+              visibility: isActive ? "visible" : "hidden",
+              transition: isActive
+                ? "opacity 900ms ease, visibility 0s"
+                : "opacity 900ms ease, visibility 0s 900ms",
+            }}
+          >
+            {item.fit === "contain" ? (
+              <Image
+                src={item.image}
+                alt=""
+                fill
+                sizes="100vw"
+                className="hidden scale-110 object-cover opacity-25 blur-xl md:block"
+                aria-hidden="true"
+              />
+            ) : null}
+            <picture>
+              <source media="(max-width: 767px)" srcSet={mobileSrcSet} sizes="100vw" />
+              <Image
+                src={item.image}
+                alt={isMobile ? item.altMobile : item.alt}
+                fill
+                loading="eager"
+                fetchPriority={index === 0 ? "high" : "low"}
+                sizes="100vw"
+                className={`hero-image ${item.fit === "contain" ? "object-cover md:object-contain" : "object-cover"}`}
+                style={{ "--hero-position-mobile": item.positionMobile, "--hero-position-desktop": item.position } as CSSProperties}
+              />
+            </picture>
+          </div>
+        );
+      })}
 
       <div className="absolute inset-0 bg-[rgba(15,25,20,0.56)]" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-[rgba(14,23,18,0.2)]" />
 
       <div className="site-shell relative flex h-full items-end pb-24 pt-36 md:pb-28">
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false} mode="popLayout">
           <motion.div
             key={`${active}-copy`}
-            initial={{ opacity: 0, y: 34 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-[900px]"
           >
             <p className="eyebrow !text-[#efc66d]">{slide.eyebrow}</p>
