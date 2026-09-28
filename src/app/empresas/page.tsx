@@ -19,9 +19,9 @@ export default function EmpresasPage() {
         eyebrow="Mãe Divina para empresas"
         title="Cuidado que trabalha junto."
         text="Palestras, práticas e experiências para apoiar equipes mais presentes, saudáveis e capazes de sustentar boas relações."
-        image="/images/pratica-em-dupla.jpg"
-        imageAlt="Prática de colaboração e confiança"
-        position="center 42%"
+        image="/images/reinor-meditacao.jpg"
+        imageAlt="Reinor sentado em meditação sobre o tapete, ao ar livre"
+        position="center 30%"
       />
 
       <section id="nr1" className="bg-paper py-24 md:py-36">
