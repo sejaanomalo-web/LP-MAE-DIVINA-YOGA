@@ -17,9 +17,9 @@ export default function LojaPage() {
         eyebrow="Loja da Mãe"
         title="Objetos com intenção."
         text="Uma curadoria para acompanhar sua prática e transformar pequenos gestos em rituais de presença."
-        image="/images/casa-altar.jpg"
-        imageAlt="Detalhes e objetos do espaço Mãe Divina"
-        position="center"
+        image="/images/loja-altar-vela.jpg"
+        imageAlt="Altar com vela acesa, flores e imagens sagradas na Mãe Divina"
+        position="center 55%"
       />
       <section className="bg-paper py-24 md:py-36">
         <div className="content-shell">
