@@ -75,7 +75,7 @@ export default function PraticasPage() {
       <section id="asanas" className="bg-sand py-24 md:py-36">
         <div className="content-shell grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <Reveal className="relative min-h-[520px] overflow-hidden md:min-h-[700px]">
-            <Image src="/images/pratica-em-dupla.jpg" alt="Asana de equilíbrio em dupla" fill sizes="(max-width: 1024px) 100vw, 52vw" className="object-cover object-[55%_center]" />
+            <Image src="/images/01-mobile.png" alt="Carol sentada em namastê sobre o tapete, ao ar livre" fill sizes="(max-width: 1024px) 100vw, 52vw" className="object-cover object-[center_35%]" />
           </Reveal>
           <Reveal delay={0.08}>
             <span className="eyebrow">03 · Asanas</span>
