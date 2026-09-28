@@ -17,7 +17,7 @@ const highlights = [
     title: "Eventos",
     text: "Encontros, oficinas e retiros da Mãe Divina.",
     href: "/eventos",
-    image: "/images/pratica-em-dupla.jpg",
+    image: "/images/eventos-turma.jpg",
     className: "",
   },
   {
