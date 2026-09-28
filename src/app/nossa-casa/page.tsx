@@ -34,7 +34,7 @@ export default function NossaCasaPage() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display-title text-[3.2rem] sm:text-[4.6rem] lg:text-[6.8rem]">Uma casa não nasce pronta. Ela é cuidada.</h2>
-            <div className="mt-9 grid gap-7 text-sm leading-8 text-ink-soft md:grid-cols-2">
+            <div className="mt-9 grid gap-7 text-[0.9625rem] leading-8 text-ink-soft md:grid-cols-2">
               <p>
                 A Mãe Divina nasceu do desejo de criar um espaço seguro de reconexão com o corpo, a respiração e o sagrado. Ao longo dos anos, cada aula, estudo e vivência ajudou a formar uma comunidade feita de presença e pertencimento.
               </p>

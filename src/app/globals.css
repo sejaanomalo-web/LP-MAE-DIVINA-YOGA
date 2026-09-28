@@ -191,11 +191,13 @@ button {
 
 .hero-image {
   object-position: var(--hero-position-mobile);
+  transform: scale(0.9);
 }
 
 @media (min-width: 768px) {
   .hero-image {
     object-position: var(--hero-position-desktop);
+    transform: none;
   }
 }
 
