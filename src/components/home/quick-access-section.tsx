@@ -25,16 +25,18 @@ const highlights = [
     title: "Meditações",
     text: "Oficinas, estudos e práticas de aprofundamento.",
     href: "/meditacoes",
-    image: "/images/casa-altar.jpg",
+    image: "/images/meditacao-grupo.jpg",
     className: "",
   },
   {
-    label: "NR1 e bem-estar",
+    labelLead: "NR1",
+    label: "& Soluções corporativas",
     title: "Para empresas",
     text: "Palestras e experiências para equipes mais conscientes.",
     href: "/empresas",
     image: "/images/reinor-namaste.jpg",
     className: "",
+    zoomOut: true,
   },
   {
     label: "Curadoria",
@@ -69,17 +71,32 @@ export function QuickAccessSection() {
                 href={item.href}
                 className="group relative flex h-full min-h-[290px] overflow-hidden bg-forest text-white"
               >
+                {"zoomOut" in item ? (
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="scale-110 object-cover opacity-60 blur-xl"
+                    aria-hidden="true"
+                  />
+                ) : null}
                 <Image
                   src={item.image}
                   alt=""
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  className={`object-cover transition-transform duration-700 ${
+                    "zoomOut" in item ? "scale-90 group-hover:scale-[0.925]" : "group-hover:scale-[1.025]"
+                  }`}
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,24,0.12)_0%,rgba(20,30,24,0.68)_48%,rgba(20,30,24,0.94)_100%)]" />
                 <div className="relative mt-auto flex w-full items-end justify-between gap-5 p-6 md:p-7">
                   <div>
-                    <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#f3d17a]">{item.label}</p>
+                    <p className="flex items-baseline gap-1.5 text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#f3d17a]">
+                      {"labelLead" in item ? <span className="text-[1.1rem] tracking-[0.08em]">{item.labelLead}</span> : null}
+                      {item.label}
+                    </p>
                     <h3 className="mt-2 font-display text-4xl font-semibold text-[#fffaf5]">{item.title}</h3>
                     <p className="mt-3 max-w-sm text-xs leading-5 text-white/68">{item.text}</p>
                   </div>
