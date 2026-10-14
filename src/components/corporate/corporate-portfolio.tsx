@@ -1,6 +1,5 @@
 "use client";
 
-import { QRCodeSVG } from "qrcode.react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -54,15 +53,9 @@ export function CorporatePortfolio() {
   return (
     <section id="portfolio" className="bg-paper py-24 md:py-36">
       <div className="content-shell">
-        <div className="grid gap-10 lg:grid-cols-[1fr_260px] lg:items-end">
-          <div>
-            <span className="eyebrow">Portfólio estático</span>
-            <h2 className="display-title mt-5 text-[3.5rem] sm:text-[5rem] lg:text-[7rem]">Ferramentas que cabem na vida real.</h2>
-          </div>
-          <div className="border border-ink/12 bg-[#fffaf5] p-5">
-            <QRCodeSVG value={proposalUrl} size={138} fgColor="#24372d" bgColor="#fffaf5" className="mx-auto" />
-            <p className="mt-4 text-center text-[0.62rem] font-semibold uppercase text-terracotta">Escaneie para falar com Reinor</p>
-          </div>
+        <div>
+          <span className="eyebrow">Portfólio estático</span>
+          <h2 className="display-title mt-5 text-[3.5rem] sm:text-[5rem] lg:text-[7rem]">Ferramentas que cabem na vida real.</h2>
         </div>
 
         <div className="mt-16 space-y-5">
