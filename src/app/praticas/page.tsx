@@ -27,9 +27,9 @@ export default function PraticasPage() {
         eyebrow="Hatha Yoga"
         title="Prática é caminho."
         text="Uma tradição viva que integra corpo, respiração, atenção e presença, respeitando todos os corpos e momentos de vida."
-        image="/images/aula-hatha.jpg"
-        imageAlt="Aula de Hatha Yoga na Mãe Divina"
-        position="center 55%"
+        image="/images/postura-guerreiro.jpg"
+        imageAlt="Alunos na postura do guerreiro durante aula na Mãe Divina"
+        position="center 35%"
       />
 
       <section id="historia" className="bg-paper py-24 md:py-36">
