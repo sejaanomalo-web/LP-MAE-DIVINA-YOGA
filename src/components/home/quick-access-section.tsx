@@ -25,7 +25,7 @@ const highlights = [
     title: "Meditações",
     text: "Oficinas, estudos e práticas de aprofundamento.",
     href: "/meditacoes",
-    image: "/images/meditacao-grupo.jpg",
+    image: "/images/meditacoes.jpg",
     className: "",
   },
   {

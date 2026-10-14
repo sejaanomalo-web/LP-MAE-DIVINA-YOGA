@@ -11,8 +11,8 @@ const portfolio = [
     number: "01",
     title: "Respiração consciente",
     text: "Ferramentas simples para reconhecer sinais de tensão, recuperar foco e criar pausas possíveis durante o expediente.",
-    image: "/images/aula-hatha.jpg",
-    position: "center 55%",
+    image: "/images/pranayama.jpg",
+    position: "center 22%",
   },
   {
     id: "niyamas",
