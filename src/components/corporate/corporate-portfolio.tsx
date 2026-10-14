@@ -42,8 +42,8 @@ const portfolio = [
     number: "05",
     title: "Laborais com Yoga",
     text: "Movimentos acessíveis, respiração e relaxamento para prevenir sobrecarga e devolver mobilidade ao corpo ao longo do dia.",
-    image: "/images/aula-hatha.jpg",
-    position: "center 65%",
+    image: "/images/laborais-sesc.jpg",
+    position: "center 55%",
   },
 ];
 
