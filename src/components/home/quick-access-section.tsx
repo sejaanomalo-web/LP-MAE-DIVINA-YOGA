@@ -36,7 +36,7 @@ const highlights = [
     href: "/empresas",
     image: "/images/reinor-namaste.jpg",
     className: "",
-    zoomOut: true,
+    position: "center 30%",
   },
   {
     label: "Curadoria",
@@ -71,24 +71,13 @@ export function QuickAccessSection() {
                 href={item.href}
                 className="group relative flex h-full min-h-[290px] overflow-hidden bg-forest text-white"
               >
-                {"zoomOut" in item ? (
-                  <Image
-                    src={item.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="scale-110 object-cover opacity-60 blur-xl"
-                    aria-hidden="true"
-                  />
-                ) : null}
                 <Image
                   src={item.image}
                   alt=""
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className={`object-cover transition-transform duration-700 ${
-                    "zoomOut" in item ? "scale-90 group-hover:scale-[0.925]" : "group-hover:scale-[1.025]"
-                  }`}
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  style={"position" in item ? { objectPosition: item.position } : undefined}
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,24,0.12)_0%,rgba(20,30,24,0.68)_48%,rgba(20,30,24,0.94)_100%)]" />
                 <div className="relative mt-auto flex w-full items-end justify-between gap-5 p-6 md:p-7">
