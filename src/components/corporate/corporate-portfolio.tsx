@@ -35,8 +35,8 @@ const portfolio = [
     number: "04",
     title: "Roda da Vida",
     text: "Leitura visual de prioridades para reconhecer desequilíbrios e transformar percepção em próximos passos realistas.",
-    image: "/images/pratica-em-dupla.jpg",
-    position: "center 42%",
+    image: "/images/roda-da-vida.jpg",
+    position: "center 60%",
   },
   {
     id: "laborais",
