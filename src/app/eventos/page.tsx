@@ -20,9 +20,9 @@ export default async function EventosPage({
         eyebrow="Calendário Yôga"
         title="O ano como prática."
         text="Encontros, estudos e imersões para dar intenção ao tempo e profundidade à experiência."
-        image="/images/pratica-em-dupla.jpg"
-        imageAlt="Prática de Yoga ao ar livre"
-        position="center 42%"
+        image="/images/reinor-meditacao-eventos.jpg"
+        imageAlt="Reinor meditando com alunos na sala de prática"
+        position="center 22%"
       />
       <section className="bg-paper py-20 md:py-28">
         <div className="content-shell">

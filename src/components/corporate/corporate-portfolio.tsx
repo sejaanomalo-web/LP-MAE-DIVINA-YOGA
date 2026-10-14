@@ -1,6 +1,5 @@
 "use client";
 
-import { QRCodeSVG } from "qrcode.react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -11,8 +10,8 @@ const portfolio = [
     number: "01",
     title: "Respiração consciente",
     text: "Ferramentas simples para reconhecer sinais de tensão, recuperar foco e criar pausas possíveis durante o expediente.",
-    image: "/images/aula-hatha.jpg",
-    position: "center 55%",
+    image: "/images/pranayama.jpg",
+    position: "center 22%",
   },
   {
     id: "niyamas",
@@ -35,16 +34,16 @@ const portfolio = [
     number: "04",
     title: "Roda da Vida",
     text: "Leitura visual de prioridades para reconhecer desequilíbrios e transformar percepção em próximos passos realistas.",
-    image: "/images/pratica-em-dupla.jpg",
-    position: "center 42%",
+    image: "/images/roda-da-vida.jpg",
+    position: "center 60%",
   },
   {
     id: "laborais",
     number: "05",
     title: "Laborais com Yoga",
     text: "Movimentos acessíveis, respiração e relaxamento para prevenir sobrecarga e devolver mobilidade ao corpo ao longo do dia.",
-    image: "/images/aula-hatha.jpg",
-    position: "center 65%",
+    image: "/images/laborais-sesc.jpg",
+    position: "center 55%",
   },
 ];
 
@@ -54,15 +53,9 @@ export function CorporatePortfolio() {
   return (
     <section id="portfolio" className="bg-paper py-24 md:py-36">
       <div className="content-shell">
-        <div className="grid gap-10 lg:grid-cols-[1fr_260px] lg:items-end">
-          <div>
-            <span className="eyebrow">Portfólio estático</span>
-            <h2 className="display-title mt-5 text-[3.5rem] sm:text-[5rem] lg:text-[7rem]">Ferramentas que cabem na vida real.</h2>
-          </div>
-          <div className="border border-ink/12 bg-[#fffaf5] p-5">
-            <QRCodeSVG value={proposalUrl} size={138} fgColor="#24372d" bgColor="#fffaf5" className="mx-auto" />
-            <p className="mt-4 text-center text-[0.62rem] font-semibold uppercase text-terracotta">Escaneie para falar com Reinor</p>
-          </div>
+        <div>
+          <span className="eyebrow">Portfólio estático</span>
+          <h2 className="display-title mt-5 text-[3.5rem] sm:text-[5rem] lg:text-[7rem]">Ferramentas que cabem na vida real.</h2>
         </div>
 
         <div className="mt-16 space-y-5">

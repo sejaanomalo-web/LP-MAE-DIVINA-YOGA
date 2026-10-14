@@ -72,6 +72,14 @@ export function HeroCarousel() {
                 aria-hidden="true"
               />
             ) : null}
+            <Image
+              src={item.imageMobile}
+              alt=""
+              fill
+              sizes="100vw"
+              className="scale-110 object-cover opacity-60 blur-xl md:hidden"
+              aria-hidden="true"
+            />
             <picture>
               <source media="(max-width: 767px)" srcSet={mobileSrcSet} sizes="100vw" />
               <Image
