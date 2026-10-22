@@ -24,7 +24,13 @@ const initialAnswers: Answers = {
 };
 
 const experienceOptions = ["Nunca pratiquei", "Já pratiquei", "Pratico atualmente"];
-const goalOptions = ["Reduzir estresse", "Cuidar de dores", "Ganhar mobilidade", "Meditar melhor", "Autoconhecimento"];
+const goalOptions = [
+  "Reduzir estresse e ansiedade",
+  "Reduzir dores e relaxar",
+  "Ganhar mobilidade e flexibilidade",
+  "Meditação e Autoconhecimento",
+  "Ferramentas para empresas",
+];
 const periodOptions = ["Manhã", "Tarde", "Noite", "Quero ver a grade"];
 
 export function AnamnesisSection() {

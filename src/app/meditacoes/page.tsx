@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import {
   ArrowUpRight,
-  BookOpen,
   CircleUserRound,
   Flame,
   HandHeart,
   HeartHandshake,
-  MessageCircle,
+  HeartPulse,
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
@@ -15,7 +14,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Meditações",
-  description: "Meditação, estudos, SEVA, Osho, Sangha e encontros gratuitos da Mãe Divina Yôga.",
+  description: "Meditação, Yogaterapia, Kriya Yoga, SEVA e encontros gratuitos da Mãe Divina Yôga.",
 };
 
 const paths = [
@@ -34,38 +33,31 @@ const paths = [
     text: "Um espaço de prática e investigação contínua. A descrição completa, periodicidade e critérios de participação serão validados com a equipe.",
   },
   {
-    id: "osho",
-    icon: Flame,
+    id: "yogaterapia",
+    icon: HeartPulse,
     number: "03",
-    title: "Osho",
-    text: "Encontros de meditação e experiência inspirados em práticas ativas, presença corporal e observação.",
+    title: "Yogaterapia",
+    text: "O Yoga aplicado de forma individualizada para apoiar o cuidado com dores, tensões e desequilíbrios do corpo e da mente.",
   },
   {
-    id: "sangha",
-    icon: MessageCircle,
+    id: "kriya-yoga",
+    icon: Flame,
     number: "04",
-    title: "Sangha",
-    text: "Comunidade de prática e estudo. Um lugar para caminhar junto, escutar e sustentar continuidade.",
-  },
-  {
-    id: "estudos",
-    icon: BookOpen,
-    number: "05",
-    title: "Estudos",
-    text: "Leitura e conversa mediada para aproximar filosofia do Yoga, cultura indiana e perguntas da experiência contemporânea.",
+    title: "Kriya Yoga",
+    text: "Técnicas de respiração, concentração e meditação da tradição do Kriya para aprofundar a prática interior.",
   },
   {
     id: "seva",
     icon: HandHeart,
-    number: "06",
+    number: "05",
     title: "SEVA",
     text: "Serviço como prática: ações que colocam tempo, presença e cuidado a favor da comunidade.",
   },
   {
     id: "eventos-gratuitos",
     icon: HeartHandshake,
-    number: "07",
-    title: "Eventos Gratuitos",
+    number: "06",
+    title: "Eventos Gratuitos no Parque",
     text: "Portas abertas para ampliar acesso, criar encontros e apresentar ferramentas simples de bem-estar.",
   },
 ];

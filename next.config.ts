@@ -6,6 +6,20 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/eventos/sangha-de-estudos",
+        destination: "/eventos/encontros-de-estudo-vedanta",
+        permanent: true,
+      },
+      {
+        source: "/eventos/agni-noite-de-presenca",
+        destination: "/eventos/tarde-na-india",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

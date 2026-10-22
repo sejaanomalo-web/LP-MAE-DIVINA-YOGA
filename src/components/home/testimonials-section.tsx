@@ -18,8 +18,8 @@ export function TestimonialsSection() {
       <div className="content-shell">
         <div className="grid gap-12 lg:grid-cols-[0.35fr_1fr]">
           <div>
-            <span className="eyebrow">O que dizem</span>
-            <p className="mt-6 max-w-xs text-xs leading-6 text-ink-soft">
+            <span className="eyebrow !text-[0.84rem]">O que dizem</span>
+            <p className="mt-6 max-w-xs text-[0.9rem] leading-7 text-ink-soft">
               A experiência da casa contada por quem encontra no tapete uma forma de voltar para si.
             </p>
             <div className="mt-8 flex items-center gap-2">

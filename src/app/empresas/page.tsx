@@ -42,7 +42,7 @@ export default function EmpresasPage() {
               <Reveal key={item.title} delay={index * 0.08} className="border-b border-ink/15 py-9 last:border-b-0 md:border-b-0 md:border-r md:px-8 md:last:border-r-0">
                 <item.icon size={23} strokeWidth={1.4} className="text-terracotta" />
                 <h3 className="mt-10 font-display text-4xl font-semibold">{item.title}</h3>
-                <p className="mt-4 text-xs leading-6 text-ink-soft">{item.text}</p>
+                <p className="mt-4 text-[0.8625rem] leading-7 text-ink-soft">{item.text}</p>
               </Reveal>
             ))}
           </div>
