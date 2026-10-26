@@ -105,7 +105,7 @@ export const heroSlides = [
     alt: "Turma praticando a postura do guerreiro no espaço Mãe Divina",
     altMobile: "Carol em postura meditativa ao ar livre",
     position: "center 32%",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "cover",
   },
   {
@@ -117,7 +117,7 @@ export const heroSlides = [
     alt: "Carol em postura meditativa ao ar livre",
     altMobile: "Dupla praticando yoga ao ar livre",
     position: "center 30%",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "cover",
   },
   {
@@ -129,7 +129,7 @@ export const heroSlides = [
     alt: "Prática de yoga em dupla ao ar livre",
     altMobile: "Praticante em namastê durante aula na Mãe Divina Yôga",
     position: "center center",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "contain",
   },
   {
@@ -141,7 +141,7 @@ export const heroSlides = [
     alt: "Praticante em namastê durante aula na Mãe Divina Yôga",
     altMobile: "Aluna praticando a postura do guerreiro na Mãe Divina Yôga",
     position: "center center",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "cover",
   },
 ] as const;
