@@ -13,6 +13,7 @@ export type YogaEvent = {
   description: string;
   image: string;
   imageAlt: string;
+  imagePosition?: string;
   status: EventStatus;
   featured?: boolean;
   attractions: string[];
@@ -31,8 +32,9 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Respiração, atenção e prática para levar presença à vida cotidiana.",
     description:
       "Uma tarde de investigação prática sobre a respiração consciente. O encontro combina fundamentos, exercícios progressivos e pausas de integração para que cada participante reconheça o próprio ritmo.",
-    image: "/images/aula-hatha.jpg",
-    imageAlt: "Prática guiada no espaço Mãe Divina",
+    image: "/images/oficina-pranayama.jpg",
+    imageAlt: "Alunas em meditação sentada sobre os tapetes no espaço Mãe Divina",
+    imagePosition: "center 20%",
     status: "pre-agenda",
     featured: true,
     attractions: ["Fundamentos do Pranayama", "Prática guiada", "Material de apoio", "Chá de integração"],
@@ -40,8 +42,8 @@ export const seedEvents: YogaEvent[] = [
   },
   {
     id: "sangha-estudos-2026",
-    slug: "sangha-de-estudos",
-    title: "Sangha de Estudos",
+    slug: "encontros-de-estudo-vedanta",
+    title: "Encontros de Estudo Vedanta",
     category: "bhagavad-gita",
     date: "2026-09-12",
     time: "9h30 - 11h30",
@@ -94,20 +96,20 @@ export const seedEvents: YogaEvent[] = [
   },
   {
     id: "agni-2026",
-    slug: "agni-noite-de-presenca",
-    title: "Agni: noite de presença",
-    category: "agni",
+    slug: "tarde-na-india",
+    title: "Tarde na Índia",
+    category: "tardes",
     date: "2026-12-05",
     time: "18h30 - 21h",
     location: "Mãe Divina Yôga",
-    excerpt: "Uma noite de prática, fogo simbólico e fechamento consciente do ciclo.",
+    excerpt: "Uma tarde para mergulhar na cultura indiana com prática, sabores, aromas e música.",
     description:
-      "Um encontro de encerramento para integrar aprendizados, reconhecer travessias e abrir espaço para o próximo ciclo com clareza e intenção.",
+      "Um encontro para vivenciar a Índia que inspira o Yoga: prática, mantras, histórias, aromas e sabores reunidos em uma tarde de presença e partilha.",
     image: "/images/casa-luz.jpg",
     imageAlt: "Luz de fim de tarde no espaço Mãe Divina",
     status: "pre-agenda",
-    attractions: ["Prática suave", "Meditação", "Ritual simbólico", "Confraternização"],
-    notIncluded: ["Jantar completo", "Transporte"],
+    attractions: ["Prática de Yoga", "Mantras e música", "Chai e sabores indianos", "Histórias da tradição"],
+    notIncluded: ["Refeição completa", "Transporte"],
   },
 ];
 
@@ -115,8 +117,6 @@ export const eventCategories = [
   { value: "todos", label: "Todos" },
   { value: "tardes", label: "Tardes" },
   { value: "pranayama", label: "Pranayama" },
-  { value: "agni", label: "Agni" },
-  { value: "hofra", label: "Hofra" },
   { value: "bhagavad-gita", label: "Bhagavad Gita" },
   { value: "feminino", label: "Feminino" },
   { value: "retiro", label: "Retiro" },

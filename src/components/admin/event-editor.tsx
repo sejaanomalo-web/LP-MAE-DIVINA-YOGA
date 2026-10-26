@@ -13,6 +13,7 @@ import {
 
 const images = [
   "/images/aula-hatha.jpg",
+  "/images/oficina-pranayama.jpg",
   "/images/carol-retrato.jpg",
   "/images/casa-altar.jpg",
   "/images/casa-luz.jpg",

@@ -3,7 +3,6 @@ import { ArrowRight, Heart, Leaf, Lightbulb, MessageCircle } from "lucide-react"
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/ui/page-hero";
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
@@ -39,7 +38,7 @@ export default function NossaCasaPage() {
                 A Mãe Divina nasceu do desejo de criar um espaço seguro de reconexão com o corpo, a respiração e o sagrado. Ao longo dos anos, cada aula, estudo e vivência ajudou a formar uma comunidade feita de presença e pertencimento.
               </p>
               <p>
-                Hoje, a casa segue viva e em movimento. O Hatha Yoga é a base, mas o cuidado atravessa meditação, cultura indiana, encontros temáticos e experiências que convidam cada pessoa a voltar para a própria essência.
+                Hoje, a casa segue viva e em movimento. O Hatha Yoga é a base, mas o cuidado integra meditação, cultura indiana, encontros temáticos e experiências que convidam cada pessoa a voltar para a própria essência.
               </p>
             </div>
           </Reveal>
@@ -57,7 +56,7 @@ export default function NossaCasaPage() {
           </Reveal>
 
           <div className="mt-16 grid gap-5 md:grid-cols-3">
-            <Reveal className="overflow-hidden border border-ink/12 bg-[#fffaf5]">
+            <Reveal id="carol" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
               <div className="relative aspect-[4/5]">
                 <Image src="/images/carol-retrato.jpg" alt="Carol" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_35%]" />
               </div>
@@ -66,12 +65,14 @@ export default function NossaCasaPage() {
                 <p className="mt-3 text-xs leading-6 text-ink-soft">Conduz práticas com leveza, atenção e profundidade, criando um encontro respeitoso com cada corpo.</p>
               </div>
             </Reveal>
-            <Reveal delay={0.08} id="cadu" className="scroll-mt-28">
-              <PhotoPlaceholder
-                label="Cadu"
-                brief="Retrato vertical 4:5, luz natural, olhar direto e ambiente ligado à casa. Biografia e formação aguardam validação editorial."
-                className="h-full min-h-[560px]"
-              />
+            <Reveal delay={0.08} id="duda" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
+              <div className="relative aspect-[4/5]">
+                <Image src="/images/duda-retrato.jpg" alt="Duda" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_20%]" />
+              </div>
+              <div className="p-6">
+                <p className="font-display text-4xl font-semibold">Duda</p>
+                <p className="mt-3 text-xs leading-6 text-ink-soft">Eduarda Silva, fundadora do Mãe Divina Yoga Cascavel. Pela inspiração da energia feminina, conduziu com muito amor aulas e retiros às alunas até 2025. Hoje conduz encontros durante o ano em momentos especiais!</p>
+              </div>
             </Reveal>
             <Reveal delay={0.16} id="reinor" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
               <div className="relative aspect-[4/5]">
@@ -109,7 +110,7 @@ export default function NossaCasaPage() {
                   <span className="text-[0.6rem] text-white/35">{item.number}</span>
                 </div>
                 <h3 className="mt-12 font-display text-4xl font-semibold text-[#fffaf5]">{item.title}</h3>
-                <p className="mt-5 text-xs leading-6 text-white/58">{item.text}</p>
+                <p className="mt-5 text-[0.9rem] leading-7 text-white/58">{item.text}</p>
               </Reveal>
             ))}
           </div>

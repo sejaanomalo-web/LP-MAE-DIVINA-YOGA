@@ -53,7 +53,7 @@ export default function PraticasPage() {
           <Reveal className="max-w-4xl">
             <span className="eyebrow !text-gold">02 · Caminho</span>
             <h2 className="display-title mt-6 text-[3.5rem] text-[#fffaf5] sm:text-[5rem] lg:text-[7.5rem]">Muito além da flexibilidade.</h2>
-            <p className="mt-7 max-w-2xl text-sm leading-8 text-white/72">O tapete é um laboratório: percebemos hábitos, treinamos presença e aprendemos a responder com mais consciência. O que se pratica ali começa a aparecer na forma de respirar, escolher, pausar e se relacionar.</p>
+            <p className="mt-7 max-w-2xl text-sm leading-8 text-white/72">O tapete é um laboratório: percebemos hábitos, treinamos presença e aprendemos a responder com mais consciência. O que se pratica em aula é levado para a vida, na forma como o ser humano se relaciona consigo, com o mundo e com as pessoas.</p>
           </Reveal>
           <div className="mt-16 grid border-y border-white/20 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -75,7 +75,7 @@ export default function PraticasPage() {
       <section id="asanas" className="bg-sand py-24 md:py-36">
         <div className="content-shell grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <Reveal className="relative min-h-[520px] overflow-hidden md:min-h-[700px]">
-            <Image src="/images/01-mobile.png" alt="Carol sentada em namastê sobre o tapete, ao ar livre" fill sizes="(max-width: 1024px) 100vw, 52vw" className="object-cover object-[center_35%]" />
+            <Image src="/images/asanas-carol.jpg" alt="Carol na postura do barco com as mãos nos pés, sobre o tapete ao ar livre" fill sizes="(max-width: 1024px) 100vw, 52vw" className="object-cover object-[center_45%]" />
           </Reveal>
           <Reveal delay={0.08}>
             <span className="eyebrow">03 · Asanas</span>

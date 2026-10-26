@@ -32,7 +32,7 @@ const highlights = [
     labelLead: "NR1",
     label: "& Soluções corporativas",
     title: "Para empresas",
-    text: "Palestras e experiências para equipes mais conscientes.",
+    text: "Palestras e ferramentas para desenvolver equipes conscientes e atender as conformidades legais.",
     href: "/empresas",
     image: "/images/reinor-namaste.jpg",
     className: "",

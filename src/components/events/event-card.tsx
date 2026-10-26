@@ -20,6 +20,7 @@ export function EventCard({ event }: { event: YogaEvent }) {
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+          style={{ objectPosition: event.imagePosition }}
         />
         <span className="absolute left-4 top-4 bg-forest px-3 py-2 text-[0.58rem] font-semibold uppercase text-white">
           {statusLabel[event.status]}

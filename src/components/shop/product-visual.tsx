@@ -5,14 +5,12 @@ import type { Product } from "@/data/products";
 const productIcons = {
   camisetas: Shirt,
   tapetes: PackageOpen,
-  busties: Sparkles,
-  velas: Flame,
-  saquinhos: PackageOpen,
+  buster: Sparkles,
+  "descanso-de-olhos": PackageOpen,
   cintos: PackageOpen,
   japas: Gem,
   incensos: Flame,
   oleos: Droplets,
-  essencias: Sparkles,
 };
 
 export function ProductVisual({ product, compact = false }: { product: Product; compact?: boolean }) {

@@ -18,7 +18,7 @@ const values = [
   {
     icon: Sparkles,
     title: "Consciência",
-    text: "Corpo, mente e emoções vistos como partes de uma experiência inteira.",
+    text: "Corpo, mente e emoções vistos como partes de uma experiência integral.",
   },
 ];
 
@@ -35,7 +35,7 @@ export function HouseSection() {
           <SectionHeading
             eyebrow="Nossa Casa"
             title="O cuidado também pode ter endereço."
-            text="Há oito anos, a Mãe Divina constrói em Cascavel um espaço seguro de reconexão com o corpo, a respiração e o divino. Uma casa que acolhe o universo feminino e abraça todos os que desejam viver com mais consciência."
+            text="Há oito anos, a Mãe Divina constrói em Cascavel um espaço seguro de reconexão com o corpo, a mente e o espírito. Uma casa que acolhe o universo feminino e abraça todos os que desejam viver com mais consciência."
           />
         </Reveal>
 
@@ -64,6 +64,7 @@ export function HouseSection() {
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-[rgba(34,43,36,0.22)]" />
+              <span className="absolute left-6 top-6 text-[0.65rem] font-semibold uppercase text-white">Valores</span>
               <p className="absolute bottom-6 left-6 max-w-sm font-display text-3xl leading-8 text-white md:text-4xl">
                 Um ambiente pensado para você baixar a guarda.
               </p>
@@ -84,11 +85,11 @@ export function HouseSection() {
             </Reveal>
             <Reveal delay={0.2} className="relative flex min-h-[280px] flex-col justify-between overflow-hidden border border-terracotta/25 bg-sand p-7 text-white md:p-9">
               <Image
-                src="/images/visao-altar.jpg"
-                alt="Carol acendendo incenso no altar da casa"
+                src="/images/visao-comunidade.jpg"
+                alt="Turma praticando yoga em grupo, conduzida pela Carol"
                 fill
                 sizes="(max-width: 640px) 100vw, 29vw"
-                className="object-cover object-[center_40%]"
+                className="object-cover object-[center_60%]"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,36,28,0.62)_0%,rgba(28,40,31,0.4)_45%,rgba(20,31,24,0.92)_100%)]" />
               <span className="relative text-[0.65rem] font-semibold uppercase text-gold">Visão</span>
@@ -109,7 +110,7 @@ export function HouseSection() {
               <value.icon size={21} strokeWidth={1.5} className="mt-1 shrink-0 text-terracotta" />
               <div>
                 <h3 className="font-display text-2xl font-semibold">{value.title}</h3>
-                <p className="mt-2 text-xs leading-6 text-ink-soft">{value.text}</p>
+                <p className="mt-2 text-[0.8625rem] leading-7 text-ink-soft">{value.text}</p>
               </div>
             </Reveal>
           ))}

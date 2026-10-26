@@ -44,6 +44,7 @@ export function EventDetailClient({ slug }: { slug: string }) {
           priority
           sizes="100vw"
           className="object-cover"
+          style={{ objectPosition: event.imagePosition }}
         />
         <div className="absolute inset-0 bg-[rgba(18,29,23,0.68)]" />
         <div className="site-shell relative flex min-h-[580px] items-end pb-16">
