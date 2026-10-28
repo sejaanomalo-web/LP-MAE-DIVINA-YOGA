@@ -3,7 +3,6 @@ import {
   ArrowUpRight,
   CircleUserRound,
   Flame,
-  HandHeart,
   HeartHandshake,
   HeartPulse,
   Sparkles,
@@ -14,7 +13,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Meditações",
-  description: "Meditação, Yogaterapia, Kriya Yoga, SEVA e encontros gratuitos da Mãe Divina Yôga.",
+  description: "Meditação, Om Chanting, Yogaterapia, Kriya Yoga e encontros gratuitos da Mãe Divina Yôga.",
 };
 
 const paths = [
@@ -29,7 +28,7 @@ const paths = [
     id: "omc",
     icon: CircleUserRound,
     number: "02",
-    title: "OMC",
+    title: "Om Chanting",
     text: "Um espaço de prática e investigação contínua. A descrição completa, periodicidade e critérios de participação serão validados com a equipe.",
   },
   {
@@ -47,16 +46,9 @@ const paths = [
     text: "Técnicas de respiração, concentração e meditação da tradição do Kriya para aprofundar a prática interior.",
   },
   {
-    id: "seva",
-    icon: HandHeart,
-    number: "05",
-    title: "SEVA",
-    text: "Serviço como prática: ações que colocam tempo, presença e cuidado a favor da comunidade.",
-  },
-  {
     id: "eventos-gratuitos",
     icon: HeartHandshake,
-    number: "06",
+    number: "05",
     title: "Eventos Gratuitos no Parque",
     text: "Portas abertas para ampliar acesso, criar encontros e apresentar ferramentas simples de bem-estar.",
   },

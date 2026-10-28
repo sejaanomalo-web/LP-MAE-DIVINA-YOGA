@@ -78,7 +78,7 @@ export default function PraticasPage() {
             <Image src="/images/asanas-carol.jpg" alt="Carol na postura do barco com as mãos nos pés, sobre o tapete ao ar livre" fill sizes="(max-width: 1024px) 100vw, 52vw" className="object-cover object-[center_45%]" />
           </Reveal>
           <Reveal delay={0.08}>
-            <span className="eyebrow">03 · Asanas</span>
+            <span className="eyebrow">03 · Propósito</span>
             <h2 className="display-title mt-6 text-[3.3rem] sm:text-[4.6rem] lg:text-[6.5rem]">Firmeza sem rigidez. Suavidade sem ausência.</h2>
             <p className="body-copy mt-8">As posturas são propostas com permanência e fluidez, sempre integradas à respiração. Variações, apoios e pausas fazem parte da prática. O objetivo não é reproduzir uma forma perfeita, mas perceber com mais qualidade o corpo real que está ali.</p>
             <Link href="/#aula-gratis" className="button-primary mt-9">Experimentar uma aula <ArrowRight size={16} /></Link>

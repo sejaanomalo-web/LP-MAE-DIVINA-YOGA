@@ -52,7 +52,7 @@ export const navigation: NavigationItem[] = [
     href: "/eventos",
     items: [
       { label: "Oficina de Pranayama", href: "/eventos/oficina-de-pranayama" },
-      { label: "Grupo", href: "/eventos/encontros-de-estudo-vedanta" },
+      { label: "Grupo de Estudo", href: "/eventos/encontros-de-estudo-vedanta" },
       { label: "Vivência do Feminino", href: "/eventos/vivencia-do-feminino" },
       { label: "Retiro Mãe Divina", href: "/eventos/retiro-mae-divina" },
       { label: "Tarde na Índia", href: "/eventos/tarde-na-india" },
@@ -64,10 +64,9 @@ export const navigation: NavigationItem[] = [
     href: "/meditacoes",
     items: [
       { label: "Oficina de Meditação", href: "/meditacoes#oficina-de-meditacao" },
-      { label: "OMC", href: "/meditacoes#omc" },
+      { label: "Om Chanting", href: "/meditacoes#omc" },
       { label: "Yogaterapia", href: "/meditacoes#yogaterapia" },
       { label: "Kriya Yoga", href: "/meditacoes#kriya-yoga" },
-      { label: "SEVA", href: "/meditacoes#seva" },
       { label: "Eventos Gratuitos no Parque", href: "/meditacoes#eventos-gratuitos" },
     ],
   },
@@ -105,7 +104,7 @@ export const heroSlides = [
     alt: "Turma praticando a postura do guerreiro no espaço Mãe Divina",
     altMobile: "Carol em postura meditativa ao ar livre",
     position: "center 32%",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "cover",
   },
   {
@@ -117,7 +116,7 @@ export const heroSlides = [
     alt: "Carol em postura meditativa ao ar livre",
     altMobile: "Dupla praticando yoga ao ar livre",
     position: "center 30%",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "cover",
   },
   {
@@ -129,7 +128,7 @@ export const heroSlides = [
     alt: "Prática de yoga em dupla ao ar livre",
     altMobile: "Praticante em namastê durante aula na Mãe Divina Yôga",
     position: "center center",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "contain",
   },
   {
@@ -141,7 +140,7 @@ export const heroSlides = [
     alt: "Praticante em namastê durante aula na Mãe Divina Yôga",
     altMobile: "Aluna praticando a postura do guerreiro na Mãe Divina Yôga",
     position: "center center",
-    positionMobile: "center center",
+    positionMobile: "center top",
     fit: "cover",
   },
 ] as const;

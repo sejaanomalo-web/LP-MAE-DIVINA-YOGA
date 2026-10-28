@@ -110,7 +110,7 @@ export function HouseSection() {
               <value.icon size={21} strokeWidth={1.5} className="mt-1 shrink-0 text-terracotta" />
               <div>
                 <h3 className="font-display text-2xl font-semibold">{value.title}</h3>
-                <p className="mt-2 text-[0.8625rem] leading-7 text-ink-soft">{value.text}</p>
+                <p className="mt-2 text-[0.975rem] leading-7 text-ink-soft">{value.text}</p>
               </div>
             </Reveal>
           ))}
