@@ -52,7 +52,7 @@ export function HeroCarousel() {
         return (
           <div
             key={item.image}
-            className="hero-slide absolute inset-x-0 bottom-0 top-[41px] md:top-0"
+            className="hero-slide absolute inset-x-0 bottom-0 top-[82px] md:top-0"
             aria-hidden={!isActive}
             style={{
               opacity: isActive ? 1 : 0,

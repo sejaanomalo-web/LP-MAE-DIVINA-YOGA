@@ -65,22 +65,22 @@ export default function NossaCasaPage() {
                 <p className="mt-3 text-xs leading-6 text-ink-soft">Conduz práticas com leveza, atenção e profundidade, criando um encontro respeitoso com cada corpo.</p>
               </div>
             </Reveal>
-            <Reveal delay={0.08} id="duda" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
-              <div className="relative aspect-[4/5]">
-                <Image src="/images/duda-retrato.jpg" alt="Duda" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_20%]" />
-              </div>
-              <div className="p-6">
-                <p className="font-display text-4xl font-semibold">Duda</p>
-                <p className="mt-3 text-xs leading-6 text-ink-soft">Eduarda Silva, fundadora do Mãe Divina Yoga Cascavel. Pela inspiração da energia feminina, conduziu com muito amor aulas e retiros às alunas até 2025. Hoje conduz encontros durante o ano em momentos especiais!</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.16} id="reinor" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
+            <Reveal delay={0.08} id="reinor" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
               <div className="relative aspect-[4/5]">
                 <Image src="/images/reinor-namaste.jpg" alt="Reinor" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_22%]" />
               </div>
               <div className="p-6">
                 <p className="font-display text-4xl font-semibold">Reinor</p>
                 <p className="mt-3 text-xs leading-6 text-ink-soft">Conduz as pontes da casa com empresas e projetos, unindo prática, escuta e cultura de bem-estar.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.16} id="duda" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
+              <div className="relative aspect-[4/5]">
+                <Image src="/images/duda-retrato.jpg" alt="Duda" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_20%]" />
+              </div>
+              <div className="p-6">
+                <p className="font-display text-4xl font-semibold">Duda</p>
+                <p className="mt-3 text-xs leading-6 text-ink-soft">Eduarda Silva, fundadora do Mãe Divina Yoga Cascavel. Pela inspiração da energia feminina, conduziu com muito amor aulas e retiros às alunas até 2025. Hoje conduz encontros durante o ano em momentos especiais!</p>
               </div>
             </Reveal>
           </div>
