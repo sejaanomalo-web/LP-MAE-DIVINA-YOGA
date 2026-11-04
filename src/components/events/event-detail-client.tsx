@@ -38,13 +38,13 @@ export function EventDetailClient({ slug }: { slug: string }) {
     <main id="conteudo">
       <section className="relative min-h-[680px] overflow-hidden bg-forest pt-24">
         <Image
-          src={event.image}
-          alt={event.imageAlt}
+          src={event.heroImage ?? event.image}
+          alt={event.heroImageAlt ?? event.imageAlt}
           fill
           priority
           sizes="100vw"
           className="object-cover"
-          style={{ objectPosition: event.imagePosition }}
+          style={{ objectPosition: event.heroImage ? event.heroImagePosition : event.imagePosition }}
         />
         <div className="absolute inset-0 bg-[rgba(18,29,23,0.68)]" />
         <div className="site-shell relative flex min-h-[580px] items-end pb-16">
