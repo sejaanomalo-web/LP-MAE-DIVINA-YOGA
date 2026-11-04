@@ -54,7 +54,7 @@ export const navigation: NavigationItem[] = [
       { label: "Oficina de Pranayama", href: "/eventos/oficina-de-pranayama" },
       { label: "Grupo de Estudo", href: "/eventos/encontros-de-estudo-vedanta" },
       { label: "Vivência do Feminino", href: "/eventos/vivencia-do-feminino" },
-      { label: "Retiro Mãe Divina", href: "/eventos/retiro-mae-divina" },
+      { label: "Eventos Gratuitos no Parque", href: "/eventos/eventos-gratuitos-no-parque" },
       { label: "Tarde na Índia", href: "/eventos/tarde-na-india" },
       { label: "Outros eventos", href: "/eventos", description: "Veja o calendário completo" },
     ],
@@ -67,7 +67,6 @@ export const navigation: NavigationItem[] = [
       { label: "Om Chanting", href: "/meditacoes#omc" },
       { label: "Yogaterapia", href: "/meditacoes#yogaterapia" },
       { label: "Kriya Yoga", href: "/meditacoes#kriya-yoga" },
-      { label: "Eventos Gratuitos no Parque", href: "/meditacoes#eventos-gratuitos" },
     ],
   },
   {

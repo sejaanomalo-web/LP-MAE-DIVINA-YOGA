@@ -3,7 +3,6 @@ import {
   ArrowUpRight,
   CircleUserRound,
   Flame,
-  HeartHandshake,
   HeartPulse,
   Sparkles,
 } from "lucide-react";
@@ -45,13 +44,6 @@ const paths = [
     title: "Kriya Yoga",
     text: "Técnicas de respiração, concentração e meditação da tradição do Kriya para aprofundar a prática interior.",
   },
-  {
-    id: "eventos-gratuitos",
-    icon: HeartHandshake,
-    number: "05",
-    title: "Eventos Gratuitos no Parque",
-    text: "Portas abertas para ampliar acesso, criar encontros e apresentar ferramentas simples de bem-estar.",
-  },
 ];
 
 export default function MeditacoesPage() {
@@ -61,8 +53,9 @@ export default function MeditacoesPage() {
         eyebrow="Meditações"
         title="Presença que se cultiva."
         text="Meditação, estudo, serviço e comunidade como caminhos para aprofundar a prática além do tapete."
-        image="/images/casa-altar.jpg"
-        imageAlt="Espaço de contemplação da Mãe Divina"
+        image="/images/reinor-meditacao-eventos.jpg"
+        imageAlt="Reinor meditando com alunos na sala de prática"
+        position="center 22%"
       />
       <section className="bg-paper py-24 md:py-36">
         <div className="content-shell">
