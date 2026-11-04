@@ -58,7 +58,7 @@ export default function NossaCasaPage() {
           <div className="mt-16 grid gap-5 md:grid-cols-3">
             <Reveal id="carol" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
               <div className="relative aspect-[4/5]">
-                <Image src="/images/carol-retrato.jpg" alt="Carol" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_35%]" />
+                <Image src="/images/carol-meditacao.jpg" alt="Carol meditando em namastê sobre o tapete, ao ar livre" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_30%]" />
               </div>
               <div className="p-6">
                 <p className="font-display text-4xl font-semibold">Carol</p>
