@@ -40,7 +40,7 @@ export function SiteHeader() {
             className="h-[58px] w-[58px] object-contain"
             priority
           />
-          <div className="hidden min-w-0 sm:block">
+          <div className="hidden min-w-0 sm:block xl:hidden 2xl:block">
             <span className="block font-display text-[1.3rem] font-semibold leading-none text-[#fffaf5]">
               Mãe Divina
             </span>
@@ -61,7 +61,7 @@ export function SiteHeader() {
             >
               <Link
                 href={item.href}
-                className="flex h-12 items-center gap-1.5 px-2.5 text-[0.67rem] font-semibold uppercase text-white/78 transition-colors hover:text-white 2xl:px-3"
+                className="flex h-12 items-center gap-1.5 whitespace-nowrap px-2.5 text-[0.67rem] font-semibold uppercase text-white/78 transition-colors hover:text-white 2xl:px-3"
                 aria-haspopup={item.items ? "menu" : undefined}
                 aria-expanded={item.items ? openMenu === item.label : undefined}
               >
@@ -114,7 +114,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/#aula-gratis" className="button-light hidden !min-h-10 !px-4 lg:inline-flex">
+          <Link href="/#aula-gratis" className="button-light hidden !min-h-10 !px-4 whitespace-nowrap lg:inline-flex">
             Aula grátis
             <ArrowUpRight size={15} />
           </Link>
