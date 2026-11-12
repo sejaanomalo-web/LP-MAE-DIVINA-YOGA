@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import {
   ArrowUpRight,
-  CircleUserRound,
   Flame,
   HeartPulse,
   Sparkles,
 } from "lucide-react";
+import { OmIcon } from "@/components/icons/om-icon";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/ui/reveal";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Meditações",
-  description: "Meditação, Om Chanting, Yogaterapia, Kriya Yoga e encontros gratuitos da Mãe Divina Yôga.",
+  description: "Meditação, OM Chanting, Yogaterapia, Kriya Yoga e encontros gratuitos da Mãe Divina Yôga.",
 };
 
 const paths = [
@@ -25,9 +25,9 @@ const paths = [
   },
   {
     id: "omc",
-    icon: CircleUserRound,
+    icon: OmIcon,
     number: "02",
-    title: "Om Chanting",
+    title: "OM Chanting",
     text: "Um espaço de prática e investigação contínua. A descrição completa, periodicidade e critérios de participação serão validados com a equipe.",
   },
   {

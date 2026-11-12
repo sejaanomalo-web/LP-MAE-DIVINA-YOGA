@@ -23,6 +23,7 @@ export default async function EventosPage({
         image="/images/eventos-om.jpg"
         imageAlt="Símbolo Om na parede verde da sala de prática da Mãe Divina"
         position="72% center"
+        mobilePosition="90% center"
       />
       <section className="bg-paper py-20 md:py-28">
         <div className="content-shell">

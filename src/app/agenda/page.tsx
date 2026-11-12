@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import { ScheduleBoard } from "@/components/schedule/schedule-board";
 import { decodeSchedule } from "@/lib/class-schedule";
@@ -8,6 +9,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 export const metadata: Metadata = {
   title: "Agenda de Aulas",
   description: "Dias, horários e informações para praticar na Mãe Divina Yôga.",
+  robots: { index: false, follow: false },
 };
 
 export default async function AgendaPage({
@@ -16,6 +18,9 @@ export default async function AgendaPage({
   searchParams: Promise<{ agenda?: string }>;
 }) {
   const { agenda } = await searchParams;
+  // A página pública de agenda saiu do site: os horários ficam em /contato#horarios.
+  // Só os links gerados pelo editor do admin (?agenda=...) continuam abrindo aqui.
+  if (!agenda) redirect("/contato#horarios");
   const decoded = decodeSchedule(agenda);
 
   return (

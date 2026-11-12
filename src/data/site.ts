@@ -35,16 +35,25 @@ export const navigation: NavigationItem[] = [
     ],
   },
   {
-    label: "Contato e Agenda",
+    label: "Contato e Horários",
     href: "/contato",
     items: [
       { label: "Horários", href: "/contato#horarios", description: "Grade semanal de práticas" },
-      { label: "Agenda de aulas", href: "/agenda", description: "Veja dias, horários e orientações" },
-      { label: "Zap", href: `https://wa.me/${siteContact.whatsappNumber}`, description: "Converse com a nossa equipe" },
-      { label: "Insta", href: siteContact.instagram, description: "Acompanhe a casa por perto" },
+      { label: "WhatsApp", href: `https://wa.me/${siteContact.whatsappNumber}`, description: "Converse com a nossa equipe" },
+      { label: "Instagram", href: siteContact.instagram, description: "Acompanhe a casa por perto" },
       { label: "YouTube", href: "/contato#youtube", description: "Canal em preparação" },
       { label: "Depoimentos", href: "/#depoimentos", description: "Experiências reais" },
       { label: "Ficha Anamnese", href: "/#aula-gratis", description: "Agende sua aula experimental" },
+    ],
+  },
+  {
+    label: "Hatha Yoga",
+    href: "/praticas",
+    items: [
+      { label: "História", href: "/praticas#historia", description: "A tradição que atravessa séculos" },
+      { label: "Caminho", href: "/praticas#caminho", description: "Muito além da flexibilidade" },
+      { label: "Propósito", href: "/praticas#asanas", description: "Firmeza sem rigidez" },
+      { label: "Benefícios", href: "/praticas#beneficios", description: "Mudanças por dentro e por fora" },
     ],
   },
   {
@@ -64,7 +73,7 @@ export const navigation: NavigationItem[] = [
     href: "/meditacoes",
     items: [
       { label: "Oficina de Meditação", href: "/meditacoes#oficina-de-meditacao" },
-      { label: "Om Chanting", href: "/meditacoes#omc" },
+      { label: "OM Chanting", href: "/meditacoes#omc" },
       { label: "Yogaterapia", href: "/meditacoes#yogaterapia" },
       { label: "Kriya Yoga", href: "/meditacoes#kriya-yoga" },
     ],
