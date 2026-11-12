@@ -16,14 +16,14 @@ export function PartnerFooterStrip() {
           </h2>
           <Link
             href="/parceiros"
-            className="mt-3 inline-flex items-center gap-2 text-[0.66rem] font-bold uppercase text-terracotta underline-offset-4 hover:underline"
+            className="mt-3 inline-block text-[0.66rem] font-bold uppercase text-terracotta underline-offset-4 hover:underline"
           >
-            Conhecer todos os parceiros <ArrowUpRight size={14} />
+            Conhecer todos os parceiros<ArrowUpRight size={14} className="ml-2 inline-block align-[-2px]" aria-hidden="true" />
           </Link>
         </div>
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4">
-          {partners.slice(0, VISIBLE).map((partner, index) => (
-            <li key={partner.id} className={index === VISIBLE - 1 ? "col-span-2 sm:col-span-1" : undefined}>
+        <ul className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4">
+          {partners.slice(0, VISIBLE).map((partner) => (
+            <li key={partner.id}>
               <PartnerLink partner={partner} className="block">
                 <PartnerLogo partner={partner} size="sm" />
               </PartnerLink>

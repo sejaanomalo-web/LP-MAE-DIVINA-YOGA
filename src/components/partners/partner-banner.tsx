@@ -20,9 +20,9 @@ export function PartnerBanner() {
             </p>
             <Link
               href="/parceiros"
-              className="mt-6 inline-flex items-center gap-2 text-[0.68rem] font-bold uppercase text-terracotta underline-offset-4 hover:underline"
+              className="mt-6 inline-block text-[0.68rem] font-bold uppercase text-terracotta underline-offset-4 hover:underline"
             >
-              Conhecer nossos parceiros <ArrowUpRight size={14} />
+              Conhecer nossos parceiros<ArrowUpRight size={14} className="ml-2 inline-block align-[-2px]" aria-hidden="true" />
             </Link>
           </div>
           <ul className="grid grid-cols-2 gap-3 md:gap-4">
