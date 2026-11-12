@@ -1,10 +1,9 @@
 /**
  * Empresas parceiras da Mãe Divina Yôga.
  *
- * Cadastro único usado pelos três formatos da home e pela página /parceiros.
- * Por enquanto são dados demonstrativos: quando chegarem os arquivos oficiais,
- * basta preencher `logo` (ex.: "/images/parceiros/nome.svg"), `name`,
- * `description` e `url` de cada empresa — os placeholders "LOGO" somem sozinhos.
+ * Cadastro único usado pelo banner da home, pelo menu e pela página /parceiros.
+ * Por enquanto são dados demonstrativos: quando chegarem as informações oficiais,
+ * basta preencher os campos de cada empresa — os placeholders somem sozinhos.
  */
 export type Partner = {
   id: string;
@@ -12,10 +11,18 @@ export type Partner = {
   name: string;
   /** Caminho do logotipo em /public. Sem logo, aparece o espaço "LOGO". */
   logo?: string;
-  /** Descrição curta (opcional), exibida só na página /parceiros. */
+  /** Ramo ou segmento da empresa (ex.: "Alimentação natural"). */
+  segment?: string;
+  /** Quem é a empresa: apresentação curta. */
   description?: string;
-  /** Site oficial (opcional). Quando preenchido, o card vira link. */
+  /** Por que caminhamos juntos: o sentido da parceria com a Mãe Divina. */
+  why?: string;
+  /** O que a parceria oferece aos alunos (benefício, desconto, ação conjunta...). */
+  benefit?: string;
+  /** Site oficial (opcional). */
   url?: string;
+  /** Instagram (URL completa, opcional). */
+  instagram?: string;
 };
 
 export const partners: Partner[] = [
@@ -26,14 +33,10 @@ export const partners: Partner[] = [
 ];
 
 /**
- * Liga/desliga cada formato de apresentação na página inicial.
- * Os três ficam ativos nesta primeira versão para comparação.
+ * Liga/desliga a apresentação de parceiros na página inicial.
+ * (Os formatos "faixa de logos" e "seção antes do rodapé" foram descartados.)
  */
 export const partnerSections = {
-  /** Formato 01: faixa de logotipos, após "Nossa Casa". */
-  logoStrip: true,
-  /** Formato 02: banner institucional, após "Encontre seu caminho". */
+  /** Banner "Conexões que fazem parte da nossa história", após "Nossa Casa". */
   banner: true,
-  /** Formato 03: seção compacta antes do rodapé + página /parceiros. */
-  footerStrip: true,
 } as const;

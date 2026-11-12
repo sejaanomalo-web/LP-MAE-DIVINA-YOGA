@@ -4,10 +4,10 @@ import { PartnerLink, PartnerLogo } from "@/components/partners/partner-logo";
 import { Reveal } from "@/components/ui/reveal";
 import { partners } from "@/data/partners";
 
-/** Formato 02: banner institucional (home, após "Encontre seu caminho"). */
+/** Banner institucional de parceiros (home, após "Nossa Casa"). */
 export function PartnerBanner() {
   return (
-    <section aria-labelledby="parceiros-banner-title" className="bg-paper pb-4 pt-16 md:pb-0 md:pt-4">
+    <section aria-labelledby="parceiros-banner-title" className="bg-paper pb-20 pt-0 md:pb-32">
       <div className="content-shell">
         <Reveal className="grid gap-8 rounded-[18px] border border-ink/10 bg-sand/55 p-6 sm:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14 lg:p-14">
           <div>

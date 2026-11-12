@@ -1,3 +1,5 @@
+import { partners } from "@/data/partners";
+
 export type MenuLink = {
   label: string;
   href: string;
@@ -86,6 +88,18 @@ export const navigation: NavigationItem[] = [
       { label: "Palestras", href: "/empresas#palestras", description: "Conteúdo que vira prática" },
       { label: "Ferramentas e Dinâmicas", href: "/empresas#portfolio", description: "Práticas para o dia a dia das equipes" },
       { label: "Seja nosso parceiro", href: `https://wa.me/${siteContact.whatsappNumber}?text=Ol%C3%A1%2C%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20para%20empresas.`, description: "Fale pelo WhatsApp" },
+    ],
+  },
+  {
+    label: "Parceiros",
+    href: "/parceiros",
+    items: [
+      ...partners.map((partner) => ({
+        label: partner.name,
+        href: `/parceiros#${partner.id}`,
+        description: partner.segment,
+      })),
+      { label: "Ver todos", href: "/parceiros", description: "Quem caminha com a gente" },
     ],
   },
   {
