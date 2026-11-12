@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { ArrowRight, AtSign, CalendarDays, MapPin, MessageCircle, Play } from "lucide-react";
+import { ArrowRight, AtSign, MapPin, MessageCircle, Play } from "lucide-react";
 import Link from "next/link";
+import { ScheduleSlots } from "@/components/schedule/schedule-board";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/ui/reveal";
 import { defaultClassSchedule } from "@/data/class-schedule";
@@ -8,7 +9,7 @@ import { siteContact } from "@/data/site";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Contato e Agenda",
+  title: "Contato e Horários",
   description: "Horários, endereço, WhatsApp e canais da Mãe Divina Yôga em Cascavel.",
 };
 
@@ -16,11 +17,13 @@ export default function ContatoPage() {
   return (
     <main id="conteudo">
       <PageHero
-        eyebrow="Contato e agenda"
-        title="Vamos respirar juntos."
+        eyebrow="Contato e horários"
+        title="Permita-se participar dessa experiência!"
         text="Encontre uma turma, conheça a casa ou converse sobre a prática que faz sentido para o seu momento."
-        image="/images/casa-luz.jpg"
-        imageAlt="Interior da Mãe Divina Yôga"
+        image="/images/contato-altar-triangulo.jpg"
+        imageAlt="Prateleira em triângulo com plantas e imagens sagradas na Mãe Divina Yôga"
+        position="center 38%"
+        mobilePosition="58% center"
       />
 
       <section id="horarios" className="bg-paper py-24 md:py-36">
@@ -28,23 +31,18 @@ export default function ContatoPage() {
           <Reveal>
             <p className="eyebrow">Horários</p>
             <h2 className="display-title mt-6 text-[3.4rem] sm:text-[4.6rem] lg:text-[6.5rem]">Escolha um espaço na semana para você.</h2>
-            <p className="mt-7 text-xs leading-6 text-ink-soft">Consulte a agenda completa, veja as orientações da equipe e confirme sua vaga pelo WhatsApp.</p>
+            <p className="mt-7 text-xs leading-6 text-ink-soft">Veja os dias e horários das turmas e confirme sua vaga pelo WhatsApp.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/agenda" className="button-primary">Ver agenda atual <CalendarDays size={15} /></Link>
               <a href={whatsappUrl("Olá! Quero receber a grade atual de aulas da Mãe Divina Yôga.")} target="_blank" rel="noreferrer" className="button-primary !bg-forest">Falar com a equipe <MessageCircle size={15} /></a>
             </div>
           </Reveal>
-          <div className="border-t border-ink/15">
-            {defaultClassSchedule.slots.map((slot, index) => (
-              <Reveal key={slot.id} delay={index * 0.05} className="grid grid-cols-[110px_1fr] gap-5 border-b border-ink/15 py-6 md:grid-cols-[170px_1fr]">
-                <p className="font-display text-2xl font-semibold">{slot.day.replace("-feira", "")}</p>
-                <div className="text-xs text-ink-soft">
-                  <p>{slot.time}</p>
-                  <p className="mt-1 font-semibold text-ink">{slot.activity}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.08} className="border border-ink/12 bg-[#fffaf5] px-6 py-2 md:px-10 md:py-4">
+            <ScheduleSlots
+              slots={defaultClassSchedule.slots}
+              className="!border-t-0 [&>article:last-child]:border-b-0"
+              layout="md:grid-cols-2 md:items-center md:gap-y-4"
+            />
+          </Reveal>
         </div>
       </section>
 

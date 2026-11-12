@@ -40,7 +40,7 @@ export default function PraticasPage() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display-title text-[3.3rem] sm:text-[4.8rem] lg:text-[7rem]">O Yoga atravessa séculos porque continua fazendo sentido no corpo.</h2>
-            <div className="mt-9 grid gap-7 text-sm leading-8 text-ink-soft md:grid-cols-2">
+            <div className="mt-9 grid gap-7 text-sm leading-8 text-ink-soft md:grid-cols-2 md:text-base md:leading-8 lg:text-[1.0625rem] lg:leading-9">
               <p>O Yoga se desenvolveu na Índia como um conjunto amplo de caminhos de investigação da consciência. Filosofia, ética, meditação, respiração e disciplina corporal foram se encontrando em diferentes escolas e períodos.</p>
               <p>O Hatha Yoga dá atenção especial ao corpo e à energia como meios de transformação. Na Mãe Divina, essa tradição é oferecida com linguagem acessível, adaptações e cuidado com a singularidade de cada aluno.</p>
             </div>
@@ -57,15 +57,36 @@ export default function PraticasPage() {
           </Reveal>
           <div className="mt-16 grid border-y border-white/20 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Asana", "Habitar o corpo"],
-              ["Pranayama", "Refinar a respiração"],
-              ["Dhyana", "Cultivar atenção"],
-              ["Integração", "Levar a prática à vida"],
-            ].map(([title, text], index) => (
+              {
+                title: "Asana",
+                text: "A arte de habitar o corpo",
+                description:
+                  "São posturas psicofísicas de permanência ou em movimento. A palavra vem do sânscrito e significa originalmente “assento” ou “postura”. Trabalham a propriocepção, a capacidade de perceber sua posição, movimento e lugar no espaço, exigindo do praticante autocontrole e força moderada, e levando, ao final da prática, a um estado elevado de atenção. Despertam o foco sobre si mesmo e uma autoinvestigação sobre sua verdadeira essência.",
+              },
+              {
+                title: "Pranayama",
+                text: "Refinar a respiração",
+                description:
+                  "Prática do Yoga que consiste no controle, na expansão e na condução consciente da respiração, com o objetivo de harmonizar o corpo, a mente e a energia vital. No sânscrito, Prana significa energia vital, enquanto Ayama é expansão ou regulação.",
+              },
+              {
+                title: "Dhyana",
+                text: "Cultivar atenção",
+                description:
+                  "Dhyana (ध्यान) é uma palavra em sânscrito que significa meditação, contemplação profunda ou estado de consciência meditativa. Existem várias formas de meditação, mas o objetivo é um só: plena atenção consciente, o estado de presença do que você é.",
+              },
+              {
+                title: "Integração",
+                text: "Levar a prática à vida",
+                description:
+                  "Os elementos do Yoga que trabalhamos na Mãe Divina são integrados para que possam ser aplicados no cotidiano, levando mais consciência às ações práticas e às escolhas de cada pessoa, tendo como resultado uma vida mais plena, livre e feliz.",
+              },
+            ].map(({ title, text, description }, index) => (
               <Reveal key={title} delay={index * 0.08} className="border-b border-white/15 py-8 sm:border-r sm:px-7 lg:border-b-0 lg:last:border-r-0">
                 <span className="text-[0.6rem] text-white/38">{String(index + 1).padStart(2, "0")}</span>
                 <h3 className="mt-8 font-display text-3xl font-semibold">{title}</h3>
                 <p className="mt-2 text-xs text-white/55">{text}</p>
+                <p className="mt-5 text-[0.8rem] leading-6 text-white/78">{description}</p>
               </Reveal>
             ))}
           </div>

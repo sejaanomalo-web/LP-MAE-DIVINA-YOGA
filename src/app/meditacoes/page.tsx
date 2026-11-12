@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
 import {
   ArrowUpRight,
-  CircleUserRound,
   Flame,
-  HeartHandshake,
   HeartPulse,
   Sparkles,
 } from "lucide-react";
+import { OmIcon } from "@/components/icons/om-icon";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/ui/reveal";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Meditações",
-  description: "Meditação, Om Chanting, Yogaterapia, Kriya Yoga e encontros gratuitos da Mãe Divina Yôga.",
+  description: "Meditação, OM Chanting, Yogaterapia, Kriya Yoga e encontros gratuitos da Mãe Divina Yôga.",
 };
 
 const paths = [
@@ -26,9 +25,9 @@ const paths = [
   },
   {
     id: "omc",
-    icon: CircleUserRound,
+    icon: OmIcon,
     number: "02",
-    title: "Om Chanting",
+    title: "OM Chanting",
     text: "Um espaço de prática e investigação contínua. A descrição completa, periodicidade e critérios de participação serão validados com a equipe.",
   },
   {
@@ -45,13 +44,6 @@ const paths = [
     title: "Kriya Yoga",
     text: "Técnicas de respiração, concentração e meditação da tradição do Kriya para aprofundar a prática interior.",
   },
-  {
-    id: "eventos-gratuitos",
-    icon: HeartHandshake,
-    number: "05",
-    title: "Eventos Gratuitos no Parque",
-    text: "Portas abertas para ampliar acesso, criar encontros e apresentar ferramentas simples de bem-estar.",
-  },
 ];
 
 export default function MeditacoesPage() {
@@ -61,8 +53,9 @@ export default function MeditacoesPage() {
         eyebrow="Meditações"
         title="Presença que se cultiva."
         text="Meditação, estudo, serviço e comunidade como caminhos para aprofundar a prática além do tapete."
-        image="/images/casa-altar.jpg"
-        imageAlt="Espaço de contemplação da Mãe Divina"
+        image="/images/reinor-meditacao-eventos.jpg"
+        imageAlt="Reinor meditando com alunos na sala de prática"
+        position="center 22%"
       />
       <section className="bg-paper py-24 md:py-36">
         <div className="content-shell">

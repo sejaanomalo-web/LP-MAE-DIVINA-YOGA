@@ -1,5 +1,6 @@
 import { ArrowDownRight } from "lucide-react";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -8,6 +9,8 @@ type PageHeroProps = {
   image: string;
   imageAlt: string;
   position?: string;
+  /** Enquadramento só no mobile (até md). Se omitido, usa `position`. */
+  mobilePosition?: string;
 };
 
 export function PageHero({
@@ -17,6 +20,7 @@ export function PageHero({
   image,
   imageAlt,
   position = "center",
+  mobilePosition,
 }: PageHeroProps) {
   return (
     <section className="relative min-h-[620px] overflow-hidden bg-forest pt-24 md:min-h-[690px]">
@@ -26,8 +30,8 @@ export function PageHero({
         fill
         priority
         sizes="100vw"
-        className="object-cover"
-        style={{ objectPosition: position }}
+        className="object-cover object-[var(--hero-pos-m)] md:object-[var(--hero-pos)]"
+        style={{ "--hero-pos": position, "--hero-pos-m": mobilePosition ?? position } as CSSProperties}
       />
       <div className="absolute inset-0 bg-[rgba(19,30,24,0.64)]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-white/20" />

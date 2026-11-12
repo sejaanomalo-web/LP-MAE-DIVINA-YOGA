@@ -78,7 +78,7 @@ export function SiteHeader() {
                     exit={{ opacity: 0, y: 6, scale: 0.99 }}
                     transition={{ duration: 0.18 }}
                     className={`absolute left-1/2 top-[calc(100%+14px)] -translate-x-1/2 border border-ink/10 bg-[#fffaf5] p-3 text-ink shadow-[0_24px_70px_rgba(16,24,19,0.22)] ${
-                      item.items.length > 5 ? "w-[490px]" : "w-[340px]"
+                      item.items.length > 5 ? "w-[560px]" : "w-[380px]"
                     }`}
                   >
                     <div className={item.items.length > 5 ? "grid grid-cols-2 gap-1" : "grid gap-1"}>
@@ -92,9 +92,9 @@ export function SiteHeader() {
                           className="group flex min-h-12 items-start justify-between gap-3 border border-transparent px-3 py-2.5 transition-colors hover:border-terracotta/15 hover:bg-paper"
                         >
                           <span>
-                            <span className="block text-[0.72rem] font-semibold text-ink">{subItem.label}</span>
+                            <span className="block text-[0.86rem] font-semibold text-ink">{subItem.label}</span>
                             {subItem.description ? (
-                              <span className="mt-1 block text-[0.64rem] leading-4 text-ink-soft">
+                              <span className="mt-1 block text-[0.76rem] leading-5 text-ink-soft">
                                 {subItem.description}
                               </span>
                             ) : null}

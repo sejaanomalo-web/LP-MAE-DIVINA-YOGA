@@ -14,6 +14,9 @@ export type YogaEvent = {
   image: string;
   imageAlt: string;
   imagePosition?: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  heroImagePosition?: string;
   status: EventStatus;
   featured?: boolean;
   attractions: string[];
@@ -32,9 +35,9 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Respiração, atenção e prática para levar presença à vida cotidiana.",
     description:
       "Uma tarde de investigação prática sobre a respiração consciente. O encontro combina fundamentos, exercícios progressivos e pausas de integração para que cada participante reconheça o próprio ritmo.",
-    image: "/images/oficina-pranayama.jpg",
-    imageAlt: "Alunas em meditação sentada sobre os tapetes no espaço Mãe Divina",
-    imagePosition: "center 20%",
+    image: "/images/oficina-pranayama-nadi.jpg",
+    imageAlt: "Alunas praticando respiração alternada (Nadi Shodhana) sentadas sobre os tapetes",
+    imagePosition: "center 30%",
     status: "pre-agenda",
     featured: true,
     attractions: ["Fundamentos do Pranayama", "Prática guiada", "Material de apoio", "Chá de integração"],
@@ -51,8 +54,9 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Leitura compartilhada, escuta e filosofia aplicada à experiência presente.",
     description:
       "Um círculo de estudos aberto para aproximar textos da tradição do Yoga das perguntas da vida contemporânea, com leitura, silêncio e conversa mediada.",
-    image: "/images/casa-altar.jpg",
-    imageAlt: "Ambiente de estudos e contemplação da Mãe Divina",
+    image: "/images/vedanta-altar-livros.jpg",
+    imageAlt: "Altar com estátua de Buda, Bhagavad Gita e cartas de estudo sobre a mesa",
+    imagePosition: "center 50%",
     status: "gratuito",
     attractions: ["Leitura orientada", "Roda de conversa", "Meditação breve"],
     notIncluded: ["Certificação", "Apostila impressa"],
@@ -68,31 +72,32 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Corpo, voz e presença em uma experiência de escuta e pertencimento.",
     description:
       "Uma vivência para desacelerar, reconhecer ciclos e cultivar presença em um espaço seguro. A programação combina movimento, respiração e práticas de expressão.",
-    image: "/images/carol-retrato.jpg",
-    imageAlt: "Carol em contato com a natureza",
+    image: "/images/feminino-turma.jpg",
+    imageAlt: "Mulheres reunidas na sala da Mãe Divina durante a Vivência do Feminino",
+    imagePosition: "center 55%",
     status: "pre-agenda",
     featured: true,
     attractions: ["Movimento consciente", "Prática de respiração", "Roda de partilha", "Ritual de encerramento"],
     notIncluded: ["Transporte", "Hospedagem"],
   },
   {
-    id: "retiro-2026",
-    slug: "retiro-mae-divina",
-    title: "Retiro Mãe Divina",
-    category: "retiro",
+    id: "parque-2026",
+    slug: "eventos-gratuitos-no-parque",
+    title: "Eventos Gratuitos no Parque",
+    category: "parque",
     date: "2026-11-13",
-    endDate: "2026-11-15",
-    time: "Sexta a domingo",
-    location: "Região de Cascavel - PR",
-    excerpt: "Três dias para sair do ruído, aprofundar a prática e voltar ao essencial.",
+    time: "Horário a confirmar",
+    location: "Parque em Cascavel - PR (a confirmar)",
+    excerpt: "Portas abertas para ampliar acesso, criar encontros e apresentar ferramentas simples de bem-estar.",
     description:
-      "Uma imersão de fim de semana com práticas de Yoga, meditação, natureza, alimentação consciente e tempo livre. A proposta é criar espaço interno para escuta e renovação.",
-    image: "/images/pratica-em-dupla.jpg",
-    imageAlt: "Prática de confiança ao ar livre",
-    status: "pre-agenda",
+      "Práticas de Yoga ao ar livre, abertas e gratuitas, para aproximar mais pessoas do Yoga. Um encontro em meio à natureza para movimentar o corpo, respirar com consciência e compartilhar presença em comunidade.",
+    image: "/images/parque-pratica-aberta.jpg",
+    imageAlt: "Turma praticando Yoga ao ar livre sobre os tapetes, sob as árvores do parque",
+    imagePosition: "center 45%",
+    status: "gratuito",
     featured: true,
-    attractions: ["Práticas de Yoga", "Meditações", "Vivência na natureza", "Alimentação consciente"],
-    notIncluded: ["Transporte até o local", "Itens de uso pessoal"],
+    attractions: ["Prática de Yoga ao ar livre", "Respiração e meditação", "Encontro em comunidade"],
+    notIncluded: ["Tapete (traga o seu, se tiver)", "Transporte"],
   },
   {
     id: "agni-2026",
@@ -105,8 +110,12 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Uma tarde para mergulhar na cultura indiana com prática, sabores, aromas e música.",
     description:
       "Um encontro para vivenciar a Índia que inspira o Yoga: prática, mantras, histórias, aromas e sabores reunidos em uma tarde de presença e partilha.",
-    image: "/images/casa-luz.jpg",
-    imageAlt: "Luz de fim de tarde no espaço Mãe Divina",
+    image: "/images/tarde-india-roda.jpg",
+    imageAlt: "Roda de conversa com alunos sentados no chão da sala da Mãe Divina",
+    imagePosition: "center 40%",
+    heroImage: "/images/tarde-india-agni.jpg",
+    heroImageAlt: "Reinor conduzindo um ritual com fogo sagrado na sala da Mãe Divina",
+    heroImagePosition: "center 45%",
     status: "pre-agenda",
     attractions: ["Prática de Yoga", "Mantras e música", "Chai e sabores indianos", "Histórias da tradição"],
     notIncluded: ["Refeição completa", "Transporte"],
@@ -119,5 +128,5 @@ export const eventCategories = [
   { value: "pranayama", label: "Pranayama" },
   { value: "bhagavad-gita", label: "Bhagavad Gita" },
   { value: "feminino", label: "Feminino" },
-  { value: "retiro", label: "Retiro" },
+  { value: "parque", label: "No Parque" },
 ] as const;
