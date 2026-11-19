@@ -41,6 +41,7 @@ export const navigation: NavigationItem[] = [
     href: "/contato",
     items: [
       { label: "Horários", href: "/contato#horarios", description: "Grade semanal de práticas" },
+      { label: "Planos", href: "/contato#planos", description: "Modalidades e valores" },
       { label: "WhatsApp", href: `https://wa.me/${siteContact.whatsappNumber}`, description: "Converse com a nossa equipe" },
       { label: "Instagram", href: siteContact.instagram, description: "Acompanhe a casa por perto" },
       { label: "YouTube", href: "/contato#youtube", description: "Canal em preparação" },

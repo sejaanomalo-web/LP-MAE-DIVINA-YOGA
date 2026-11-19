@@ -26,7 +26,7 @@ export type Partner = {
 };
 
 export const partners: Partner[] = [
-  { id: "parceiro-01", name: "Empresa parceira 01" },
+  { id: "wellhub", name: "Wellhub", logo: "/images/wellhub-logo.jpeg" },
   { id: "parceiro-02", name: "Empresa parceira 02" },
   { id: "parceiro-03", name: "Empresa parceira 03" },
   { id: "parceiro-04", name: "Empresa parceira 04" },
