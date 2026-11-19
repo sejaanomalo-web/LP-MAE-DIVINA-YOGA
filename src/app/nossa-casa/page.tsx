@@ -117,7 +117,7 @@ export default function NossaCasaPage() {
         </div>
       </section>
 
-      <section className="bg-paper-warm py-20 md:py-28">
+      <section id="vantagens" className="scroll-mt-20 bg-paper-warm py-20 md:py-28">
         <div className="content-shell">
           <Reveal>
             <p className="eyebrow">Para quem faz parte</p>
