@@ -34,9 +34,9 @@ const highlights = [
     title: "Para empresas",
     text: "Palestras e ferramentas para desenvolver equipes conscientes e atender as conformidades legais.",
     href: "/empresas",
-    image: "/images/reinor-namaste.jpg",
+    image: "/images/empresas-reinor-apresentacao.jpg",
     className: "",
-    position: "center 30%",
+    position: "center 38%",
   },
   {
     label: "Curadoria",

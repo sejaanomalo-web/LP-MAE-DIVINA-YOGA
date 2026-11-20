@@ -5,7 +5,7 @@ import type { Product } from "@/data/products";
 const productIcons = {
   camisetas: Shirt,
   tapetes: PackageOpen,
-  buster: Sparkles,
+  bolster: Sparkles,
   "descanso-de-olhos": PackageOpen,
   cintos: PackageOpen,
   japas: Gem,
@@ -14,6 +14,22 @@ const productIcons = {
 };
 
 export function ProductVisual({ product, compact = false }: { product: Product; compact?: boolean }) {
+  const image = product.images?.[0];
+
+  if (image) {
+    return (
+      <div className={`relative overflow-hidden border border-ink/10 bg-[#f5ece4] ${compact ? "h-[340px]" : "h-[500px] md:h-[620px]"}`}>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          sizes={compact ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 65vw"}
+          className={product.imageFit === "contain" ? "object-contain" : "object-cover"}
+        />
+      </div>
+    );
+  }
+
   const Icon = productIcons[product.id as keyof typeof productIcons] ?? PackageOpen;
 
   return (
@@ -39,12 +55,14 @@ export function ProductVisual({ product, compact = false }: { product: Product; 
           <p className="font-display text-[3.2rem] font-medium leading-[0.9] text-ink sm:text-[4.3rem] lg:text-[6.2rem]">
             {product.shortName}
           </p>
-          <div className="mt-7 max-w-md border-l border-ink/20 pl-4">
-            <p className="text-xs leading-6 text-ink-soft">{product.photoBrief}</p>
-            <p className="mt-2 text-[0.58rem] font-semibold uppercase" style={{ color: product.accent }}>
-              Espaço reservado para fotografia de produto
-            </p>
-          </div>
+          {product.photoBrief && (
+            <div className="mt-7 max-w-md border-l border-ink/20 pl-4">
+              <p className="text-xs leading-6 text-ink-soft">{product.photoBrief}</p>
+              <p className="mt-2 text-[0.58rem] font-semibold uppercase" style={{ color: product.accent }}>
+                Espaço reservado para fotografia de produto
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

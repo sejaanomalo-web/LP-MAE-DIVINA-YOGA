@@ -64,7 +64,10 @@ export function ShopShowcase() {
               </motion.div>
             </AnimatePresence>
             <div className="mt-5 flex flex-col gap-5 border-b border-ink/15 pb-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-xl text-xs leading-6 text-ink-soft">{activeProduct.description}</p>
+              <div className="max-w-xl">
+                <p className="text-xs leading-6 text-ink-soft">{activeProduct.description}</p>
+                {activeProduct.availabilityNote && <p className="mt-2 text-xs font-semibold leading-6 text-terracotta">{activeProduct.availabilityNote}</p>}
+              </div>
               <a
                 href={whatsappUrl(`Olá! Quero consultar disponibilidade e valores de ${activeProduct.name}.`)}
                 target="_blank"
