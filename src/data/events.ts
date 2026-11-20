@@ -11,6 +11,9 @@ export type YogaEvent = {
   location: string;
   excerpt: string;
   description: string;
+  additionalDescription?: string;
+  introTitle?: string;
+  aboutPractice?: { title: string; text: string };
   image: string;
   imageAlt: string;
   imagePosition?: string;
@@ -35,13 +38,17 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Respiração, atenção e prática para levar presença à vida cotidiana.",
     description:
       "Uma tarde de investigação prática sobre a respiração consciente. O encontro combina fundamentos, exercícios progressivos e pausas de integração para que cada participante reconheça o próprio ritmo.",
+    aboutPractice: {
+      title: "O que é Pranayama",
+      text: "Prática do Yoga que consiste no controle, na expansão e na condução consciente da respiração, com o objetivo de harmonizar o corpo, a mente e a energia vital. No sânscrito, Prana significa energia vital, enquanto Ayama é expansão ou regulação.",
+    },
     image: "/images/oficina-pranayama-nadi.jpg",
     imageAlt: "Alunas praticando respiração alternada (Nadi Shodhana) sentadas sobre os tapetes",
     imagePosition: "center 30%",
     status: "pre-agenda",
     featured: true,
-    attractions: ["Fundamentos do Pranayama", "Prática guiada", "Material de apoio", "Chá de integração"],
-    notIncluded: ["Alimentação completa", "Tapete individual"],
+    attractions: ["Fundamentos do Pranayama", "Prática guiada", "Material de apoio", "Chá de integração", "Ambiente seguro e preparado"],
+    notIncluded: ["Alimentação completa"],
   },
   {
     id: "sangha-estudos-2026",
@@ -53,7 +60,10 @@ export const seedEvents: YogaEvent[] = [
     location: "Mãe Divina Yôga",
     excerpt: "Leitura compartilhada, escuta e filosofia aplicada à experiência presente.",
     description:
-      "Um círculo de estudos aberto para aproximar textos da tradição do Yoga das perguntas da vida contemporânea, com leitura, silêncio e conversa mediada.",
+      "Um círculo de estudos aberto para aproximar textos da tradição do Yoga das perguntas da vida contemporânea.",
+    additionalDescription:
+      "No conhecido por viveka (discernimento), estudamos os textos antigos indianos com a mente livre e o coração aberto. A tradição do Jnana Yoga tem a intenção de investigar a verdadeira natureza do Ser, enquanto corpo, mente e espírito.",
+    introTitle: "Um tempo reservado para buscar o autoconhecimento.",
     image: "/images/vedanta-altar-livros.jpg",
     imageAlt: "Altar com estátua de Buda, Bhagavad Gita e cartas de estudo sobre a mesa",
     imagePosition: "center 50%",
@@ -91,13 +101,14 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Portas abertas para ampliar acesso, criar encontros e apresentar ferramentas simples de bem-estar.",
     description:
       "Práticas de Yoga ao ar livre, abertas e gratuitas, para aproximar mais pessoas do Yoga. Um encontro em meio à natureza para movimentar o corpo, respirar com consciência e compartilhar presença em comunidade.",
+    introTitle: "Aproveite o que a vida tem de melhor.",
     image: "/images/parque-pratica-aberta.jpg",
     imageAlt: "Turma praticando Yoga ao ar livre sobre os tapetes, sob as árvores do parque",
     imagePosition: "center 45%",
     status: "gratuito",
     featured: true,
     attractions: ["Prática de Yoga ao ar livre", "Respiração e meditação", "Encontro em comunidade"],
-    notIncluded: ["Tapete (traga o seu, se tiver)", "Transporte"],
+    notIncluded: ["Tapete (traga o seu, se tiver)", "Transporte", "Alimentação"],
   },
   {
     id: "agni-2026",
@@ -110,6 +121,7 @@ export const seedEvents: YogaEvent[] = [
     excerpt: "Uma tarde para mergulhar na cultura indiana com prática, sabores, aromas e música.",
     description:
       "Um encontro para vivenciar a Índia que inspira o Yoga: prática, mantras, histórias, aromas e sabores reunidos em uma tarde de presença e partilha.",
+    introTitle: "Uma tarde pra guardar na memória",
     image: "/images/tarde-india-roda.jpg",
     imageAlt: "Roda de conversa com alunos sentados no chão da sala da Mãe Divina",
     imagePosition: "center 40%",
@@ -117,8 +129,8 @@ export const seedEvents: YogaEvent[] = [
     heroImageAlt: "Reinor conduzindo um ritual com fogo sagrado na sala da Mãe Divina",
     heroImagePosition: "center 45%",
     status: "pre-agenda",
-    attractions: ["Prática de Yoga", "Mantras e música", "Chai e sabores indianos", "Histórias da tradição"],
-    notIncluded: ["Refeição completa", "Transporte"],
+    attractions: ["Prática de Yoga", "Mantras e música", "Chai e sabores indianos", "Histórias da tradição", "Brindes"],
+    notIncluded: ["Transporte"],
   },
 ];
 

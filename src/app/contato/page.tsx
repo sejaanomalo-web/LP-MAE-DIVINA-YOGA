@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowRight, AtSign, MapPin, MessageCircle, Play } from "lucide-react";
 import Link from "next/link";
 import { ScheduleSlots } from "@/components/schedule/schedule-board";
+import { PlansAccordion } from "@/components/schedule/plans-accordion";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/ui/reveal";
 import { defaultClassSchedule } from "@/data/class-schedule";
@@ -43,6 +44,9 @@ export default function ContatoPage() {
               layout="md:grid-cols-2 md:items-center md:gap-y-4"
             />
           </Reveal>
+        </div>
+        <div className="content-shell mt-10 md:mt-14">
+          <PlansAccordion />
         </div>
       </section>
 

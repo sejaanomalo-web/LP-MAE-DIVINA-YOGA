@@ -28,7 +28,7 @@ const paths = [
     icon: OmIcon,
     number: "02",
     title: "OM Chanting",
-    text: "Um espaço de prática e investigação contínua. A descrição completa, periodicidade e critérios de participação serão validados com a equipe.",
+    text: "Segundo a tradição hindu, o OM é a vibração primordial, a base de todos os sons e a fonte de toda criação. OM Chanting é uma técnica que utiliza o mantra, a qual atravessou milênios e foi divulgada pelo mestre Swami Vishwananda para o mundo. Ela promove cura física, mental e espiritual para seus praticantes.",
   },
   {
     id: "yogaterapia",

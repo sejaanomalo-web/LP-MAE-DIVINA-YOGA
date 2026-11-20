@@ -33,6 +33,7 @@ export const navigation: NavigationItem[] = [
       { label: "Carol", href: "/nossa-casa#carol", description: "Práticas e condução das aulas" },
       { label: "Duda", href: "/nossa-casa#duda", description: "Fundadora da Mãe Divina" },
       { label: "Reinor", href: "/nossa-casa#reinor", description: "Conexões e projetos" },
+      { label: "Vantagens", href: "/nossa-casa#vantagens", description: "Benefícios de fazer parte da casa" },
       { label: "Missão, Visão e Valores", href: "/nossa-casa#valores", description: "O que sustenta cada encontro" },
     ],
   },
@@ -41,6 +42,7 @@ export const navigation: NavigationItem[] = [
     href: "/contato",
     items: [
       { label: "Horários", href: "/contato#horarios", description: "Grade semanal de práticas" },
+      { label: "Planos", href: "/contato#planos", description: "Modalidades e valores" },
       { label: "WhatsApp", href: `https://wa.me/${siteContact.whatsappNumber}`, description: "Converse com a nossa equipe" },
       { label: "Instagram", href: siteContact.instagram, description: "Acompanhe a casa por perto" },
       { label: "YouTube", href: "/contato#youtube", description: "Canal em preparação" },

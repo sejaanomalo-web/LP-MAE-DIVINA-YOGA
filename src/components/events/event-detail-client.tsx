@@ -87,8 +87,18 @@ export function EventDetailClient({ slug }: { slug: string }) {
 
           <article>
             <p className="eyebrow">Sobre o encontro</p>
-            <h2 className="display-title mt-5 text-[3rem] sm:text-[4rem] lg:text-[5.5rem]">Um tempo reservado para a experiência.</h2>
+            <h2 className="display-title mt-5 text-[3rem] sm:text-[4rem] lg:text-[5.5rem]">{event.introTitle ?? "Um tempo reservado para a experiência."}</h2>
             <p className="body-copy mt-8 max-w-3xl">{event.description}</p>
+            {event.additionalDescription ? (
+              <p className="body-copy mt-5 max-w-3xl">{event.additionalDescription}</p>
+            ) : null}
+
+            {event.aboutPractice ? (
+              <div className="mt-10 border-t border-ink/15 pt-9">
+                <h3 className="font-display text-3xl font-semibold">{event.aboutPractice.title}</h3>
+                <p className="body-copy mt-5 max-w-3xl">{event.aboutPractice.text}</p>
+              </div>
+            ) : null}
 
             <div className="mt-14 grid gap-8 border-t border-ink/15 pt-10 md:grid-cols-2">
               <div>

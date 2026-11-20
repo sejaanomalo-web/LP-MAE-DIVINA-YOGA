@@ -117,6 +117,32 @@ export default function NossaCasaPage() {
         </div>
       </section>
 
+      <section id="vantagens" className="scroll-mt-20 bg-paper-warm py-20 md:py-28">
+        <div className="content-shell">
+          <Reveal>
+            <p className="eyebrow">Para quem faz parte</p>
+            <h2 className="display-title mt-5 text-[3.2rem] sm:text-[4.6rem] lg:text-[5.8rem]">Vantagens em fazer parte</h2>
+          </Reveal>
+          <div className="mt-12 grid border-t border-ink/15 md:grid-cols-2">
+            {[
+              "Eventos gratuitos mensais",
+              "Desconto em empresas parceiras",
+              "Presença premiada",
+              "Aulas grátis em dias especiais: Dia dos Pais, Dia das Mães e Dia dos Namorados",
+              "Mimos de aniversário",
+              "50% de desconto em eventos pagos",
+            ].map((benefit, index) => (
+              <Reveal key={benefit} delay={(index % 2) * 0.08} className="flex gap-5 border-b border-ink/15 py-6 md:pr-8">
+                <span className="min-w-7 text-[0.7rem] font-semibold text-terracotta">
+                  {['I', 'II', 'III', 'IV', 'V', 'VI'][index]}
+                </span>
+                <p className="text-sm leading-7 text-ink-soft">{benefit}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <TestimonialsSection />
 
       <section className="bg-paper py-20 md:py-28">
