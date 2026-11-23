@@ -21,7 +21,7 @@ const paths = [
     icon: Sparkles,
     number: "01",
     title: "Oficina de Meditação",
-    text: "Fundamentos, técnicas guiadas e continuidade para quem deseja começar ou aprofundar uma prática possível no cotidiano.",
+    text: "É um encontro em que aprofundamos os ensinamentos sobre diferentes técnicas de meditar: passiva guiada, dinâmica (Osho), silenciosa (Zazen) e Japa Mala (Mantra Yoga). As práticas são individuais ou coletivas e trabalham diferentes aspectos da atenção plena (Mindfulness), para quem deseja começar ou se aprofundar nesse caminho.",
   },
   {
     id: "omc",

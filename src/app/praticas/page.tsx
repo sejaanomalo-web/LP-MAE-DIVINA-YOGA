@@ -39,7 +39,7 @@ export default function PraticasPage() {
             <p className="mt-8 font-display text-4xl leading-[1.08] text-terracotta md:text-5xl">Uma tradição antiga, uma experiência sempre presente.</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="display-title text-[3.3rem] sm:text-[4.8rem] lg:text-[7rem]">O Yoga atravessa séculos porque continua fazendo sentido no corpo.</h2>
+            <h2 className="display-title text-[2.4rem] sm:text-[3rem] lg:text-[3.5rem]">O Yoga atravessa séculos porque continua fazendo sentido no corpo.</h2>
             <div className="mt-9 grid gap-7 text-sm leading-8 text-ink-soft md:grid-cols-2 md:text-base md:leading-8 lg:text-[1.0625rem] lg:leading-9">
               <p>O Yoga se desenvolveu na Índia como um conjunto amplo de caminhos de investigação da consciência. Filosofia, ética, meditação, respiração e disciplina corporal foram se encontrando em diferentes escolas e períodos.</p>
               <p>O Hatha Yoga dá atenção especial ao corpo e à energia como meios de transformação. Na Mãe Divina, essa tradição é oferecida com linguagem acessível, adaptações e cuidado com a singularidade de cada aluno.</p>

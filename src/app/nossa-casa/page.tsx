@@ -29,7 +29,7 @@ export default function NossaCasaPage() {
         <div className="content-shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
           <Reveal>
             <p className="eyebrow">Nossa história</p>
-            <p className="mt-8 font-display text-4xl leading-[1.08] text-terracotta md:text-5xl">Oito anos de práticas, encontros e travessias.</p>
+            <p className="mt-8 font-display text-4xl leading-[1.08] text-terracotta md:text-5xl">Nove anos de práticas, encontros e travessias.</p>
             <div className="relative mt-10 aspect-[9/16] w-full max-w-sm overflow-hidden">
               <Image
                 src="/images/entrada-mae-divina.jpg"

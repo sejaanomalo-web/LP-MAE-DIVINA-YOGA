@@ -158,7 +158,7 @@ export const heroSlides = [
     fit: "contain",
   },
   {
-    eyebrow: "Há oito anos em Cascavel",
+    eyebrow: "Há nove anos em Cascavel",
     title: "Entre. Respire. Desperte.",
     text: "Uma casa viva, feita de detalhes, histórias e pessoas que escolheram voltar para si.",
     image: "/images/hero-reinor-namaste.png",

@@ -35,24 +35,24 @@ export function HouseSection() {
           <SectionHeading
             eyebrow="Nossa Casa"
             title="O cuidado também pode ter endereço."
-            text="Há oito anos, a Mãe Divina constrói em Cascavel um espaço seguro de reconexão com o corpo, a mente e o espírito. Uma casa que acolhe o universo feminino e abraça todos os que desejam viver com mais consciência."
+            text="Há nove anos, a Mãe Divina constrói em Cascavel um espaço seguro de reconexão com o corpo, a mente e o espírito. Uma casa que acolhe o universo feminino e abraça todos os que desejam viver com mais consciência."
           />
         </Reveal>
 
         <div className="mt-16">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-rows-2">
-            <Reveal delay={0.08} className="relative min-h-[310px] overflow-hidden sm:col-span-2">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal delay={0.08} className="relative min-h-[310px] overflow-hidden sm:col-span-2 lg:col-span-1 lg:min-h-[420px]">
               <Image
                 src="/images/casa-luz.jpg"
                 alt="Sala de práticas da Mãe Divina Yôga"
                 fill
-                sizes="(max-width: 1024px) 100vw, 58vw"
+                sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-[rgba(34,43,36,0.22)]" />
               <span className="absolute left-6 top-6 text-[0.65rem] font-semibold uppercase text-white">Valores</span>
               <p className="absolute bottom-6 left-6 max-w-sm font-display text-3xl leading-8 text-white md:text-4xl">
-                Um ambiente pensado para você baixar a guarda.
+                Um ambiente pensado para você desacelerar.
               </p>
             </Reveal>
             <Reveal delay={0.14} className="relative flex min-h-[280px] flex-col justify-between overflow-hidden bg-terracotta p-7 text-white md:p-9">

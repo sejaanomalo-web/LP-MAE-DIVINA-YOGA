@@ -79,15 +79,15 @@ export const seedEvents: YogaEvent[] = [
     date: "2026-10-03",
     time: "14h - 18h30",
     location: "Local a confirmar",
-    excerpt: "Corpo, voz e presença em uma experiência de escuta e pertencimento.",
+    excerpt: "Um momento para você, mulher, de reconexão do corpo, mente e espírito com sua ancestralidade. Autoconhecimento que respeita seus ciclos naturais e valoriza sua energia feminina.",
     description:
-      "Uma vivência para desacelerar, reconhecer ciclos e cultivar presença em um espaço seguro. A programação combina movimento, respiração e práticas de expressão.",
+      "Uma vivência para desacelerar, reconhecer ciclos e cultivar presença em um espaço seguro. A programação combina movimento, dinâmicas, rituais de cuidado e práticas de expressão corporal.",
     image: "/images/feminino-turma.jpg",
     imageAlt: "Mulheres reunidas na sala da Mãe Divina durante a Vivência do Feminino",
     imagePosition: "center 55%",
     status: "pre-agenda",
     featured: true,
-    attractions: ["Movimento consciente", "Prática de respiração", "Roda de partilha", "Ritual de encerramento"],
+    attractions: ["Movimentos e dança", "Dinâmicas individuais e coletivas", "Rituais para início e final de ciclo", "Escuta ativa e acolhimento", "Rituais de partilha"],
     notIncluded: ["Transporte", "Hospedagem"],
   },
   {
@@ -132,6 +132,23 @@ export const seedEvents: YogaEvent[] = [
     attractions: ["Prática de Yoga", "Mantras e música", "Chai e sabores indianos", "Histórias da tradição", "Brindes"],
     notIncluded: ["Transporte"],
   },
+  {
+    id: "yoga-nidra",
+    slug: "yoga-nidra",
+    title: "Yoga Nidra",
+    category: "yoga-nidra",
+    date: "",
+    time: "Horário a confirmar",
+    location: "Local a confirmar",
+    excerpt: "Relaxamento profundo e meditação guiada em um estado consciente entre a vigília e o sono.",
+    description:
+      "Conhecida como yoga do sono, é uma técnica de relaxamento profundo e meditação guiada que induz um estado consciente entre a vigília e o sono, mantendo a mente aberta e atenta enquanto o corpo relaxa por completo.",
+    image: "/images/meditacao-grupo.jpg",
+    imageAlt: "Grupo em prática de meditação na Mãe Divina Yôga",
+    status: "pre-agenda",
+    attractions: ["Relaxamento profundo", "Meditação guiada", "Atenção consciente"],
+    notIncluded: [],
+  },
 ];
 
 export const eventCategories = [
@@ -141,4 +158,5 @@ export const eventCategories = [
   { value: "bhagavad-gita", label: "Bhagavad Gita" },
   { value: "feminino", label: "Feminino" },
   { value: "parque", label: "No Parque" },
+  { value: "yoga-nidra", label: "Yoga Nidra" },
 ] as const;

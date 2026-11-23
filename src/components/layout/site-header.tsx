@@ -92,9 +92,9 @@ export function SiteHeader() {
                           className="group flex min-h-12 items-start justify-between gap-3 border border-transparent px-3 py-2.5 transition-colors hover:border-terracotta/15 hover:bg-paper"
                         >
                           <span>
-                            <span className="block text-[0.86rem] font-semibold text-ink">{subItem.label}</span>
+                            <span className="block text-[0.95rem] font-semibold text-ink">{subItem.label}</span>
                             {subItem.description ? (
-                              <span className="mt-1 block text-[0.76rem] leading-5 text-ink-soft">
+                              <span className="mt-1 block text-[0.84rem] leading-5 text-ink-soft">
                                 {subItem.description}
                               </span>
                             ) : null}
