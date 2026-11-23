@@ -22,7 +22,7 @@ const highlights = [
   },
   {
     label: "Presença",
-    title: "Meditações",
+    title: "Meditação e Cuidado",
     text: "Oficinas, estudos e práticas de aprofundamento.",
     href: "/meditacoes",
     image: "/images/meditacoes.jpg",

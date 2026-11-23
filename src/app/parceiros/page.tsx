@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight, AtSign, Globe, MessageCircle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { PartnerLogo } from "@/components/partners/partner-logo";
 import { Reveal } from "@/components/ui/reveal";
@@ -22,13 +23,25 @@ export default function ParceirosPage() {
             <ArrowLeft size={14} /> Voltar para a página inicial
           </Link>
 
-          <Reveal className="mt-10 max-w-3xl">
-            <p className="eyebrow">Parceiros</p>
-            <h1 className="display-title mt-5 text-[3.4rem] sm:text-[4.6rem] lg:text-[6.5rem]">Quem caminha com a gente</h1>
-            <p className="mt-6 text-sm leading-7 text-ink-soft md:text-base">
-              Conheça as empresas parceiras da Mãe Divina Yôga.
-            </p>
-          </Reveal>
+          <div className="mt-10 grid gap-8 md:grid-cols-[1fr_0.78fr] md:items-center md:gap-12">
+            <Reveal className="max-w-3xl">
+              <p className="eyebrow">Parceiros</p>
+              <h1 className="display-title mt-5 text-[3.4rem] sm:text-[4.6rem] lg:text-[6.5rem]">Quem caminha com a gente</h1>
+              <p className="mt-6 text-sm leading-7 text-ink-soft md:text-base">
+                Conheça as empresas parceiras da Mãe Divina Yôga.
+              </p>
+            </Reveal>
+            <Reveal delay={0.08} className="relative aspect-[4/5] max-h-[560px] overflow-hidden">
+              <Image
+                src="/images/sala-mural-lotus.jpg"
+                alt="Sala da Mãe Divina Yôga com mural de flores de lótus"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover object-center"
+              />
+            </Reveal>
+          </div>
 
           {/* Índice rápido: cada logo leva à apresentação completa do parceiro */}
           <nav aria-label="Parceiros" className="mt-12">

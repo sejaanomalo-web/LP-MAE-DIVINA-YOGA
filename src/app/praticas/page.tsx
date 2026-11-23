@@ -58,6 +58,12 @@ export default function PraticasPage() {
           <div className="mt-16 grid border-y border-white/20 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
+                title: "Yamas e Niyamas",
+                text: "Ética e autodisciplina",
+                description:
+                  "São os dez preceitos éticos e de autodisciplina que formam os dois primeiros passos dos oito ramos do Yoga nos Yoga Sutras de Patañjali. Eles servem como base moral e interna antes de avançar para posturas físicas (asanas), respiração e meditação. E se refletem nas ações e escolhas (Karma Yoga) que fazemos também em sociedade. Uma atitude de respeito por si mesmo, pelo outro e pelo meio ambiente.",
+              },
+              {
                 title: "Asana",
                 text: "A arte de habitar o corpo",
                 description:
@@ -70,10 +76,28 @@ export default function PraticasPage() {
                   "Prática do Yoga que consiste no controle, na expansão e na condução consciente da respiração, com o objetivo de harmonizar o corpo, a mente e a energia vital. No sânscrito, Prana significa energia vital, enquanto Ayama é expansão ou regulação.",
               },
               {
+                title: "Pratyahara",
+                text: "Voltar a atenção para dentro",
+                description:
+                  "Redução da distração causada pelos estímulos externos para voltar a atenção para dentro. É o primeiro passo do processo meditativo. Parado ou em movimento, o foco total está em não reagir aos estímulos externos e internos, para uma absorção dos sentidos em si mesmo.",
+              },
+              {
+                title: "Dharana",
+                text: "Fixar a atenção",
+                description:
+                  "É o ato de prender ou fixar a atenção da mente a um único objeto, lugar ou ideia, sem deixar que ela se disperse (ekagrata). A atenção plena e dirigida na qual o indivíduo é apenas observador.",
+              },
+              {
                 title: "Dhyana",
                 text: "Cultivar atenção",
                 description:
                   "Dhyana (ध्यान) é uma palavra em sânscrito que significa meditação, contemplação profunda ou estado de consciência meditativa. Existem várias formas de meditação, mas o objetivo é um só: plena atenção consciente, o estado de presença do que você é.",
+              },
+              {
+                title: "Samadhi",
+                text: "Integração e quietude mental",
+                description:
+                  "Conhecido por vários nomes em diversas tradições, esse é o estágio mais avançado da consciência humana. Estado de profunda integração e quietude mental em que a consciência se unifica ao objeto de contemplação. É o momento em que o Ser se realiza em si mesmo, como caminho, meio e fim, e o entendimento intelectual se une à intuição e aos sentidos e o humano encontra sua divindade.",
               },
               {
                 title: "Integração",
@@ -82,7 +106,7 @@ export default function PraticasPage() {
                   "Os elementos do Yoga que trabalhamos na Mãe Divina são integrados para que possam ser aplicados no cotidiano, levando mais consciência às ações práticas e às escolhas de cada pessoa, tendo como resultado uma vida mais plena, livre e feliz.",
               },
             ].map(({ title, text, description }, index) => (
-              <Reveal key={title} delay={index * 0.08} className="border-b border-white/15 py-8 sm:border-r sm:px-7 lg:border-b-0 lg:last:border-r-0">
+              <Reveal key={title} delay={(index % 4) * 0.08} className="border-b border-white/15 py-8 sm:border-r sm:px-7 lg:last:border-r-0">
                 <span className="text-[0.6rem] text-white/38">{String(index + 1).padStart(2, "0")}</span>
                 <h3 className="mt-8 font-display text-3xl font-semibold">{title}</h3>
                 <p className="mt-2 text-xs text-white/55">{text}</p>

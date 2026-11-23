@@ -73,17 +73,17 @@ export const navigation: NavigationItem[] = [
     ],
   },
   {
-    label: "Meditações",
+    label: "Meditação e Cuidado",
     href: "/meditacoes",
     items: [
       { label: "Oficina de Meditação", href: "/meditacoes#oficina-de-meditacao" },
       { label: "OM Chanting", href: "/meditacoes#omc" },
       { label: "Yogaterapia", href: "/meditacoes#yogaterapia" },
-      { label: "Kriya Yoga", href: "/meditacoes#kriya-yoga" },
+      { label: "Reiki", href: "/meditacoes#reiki" },
     ],
   },
   {
-    label: "Empresas",
+    label: "Para empresas",
     href: "/empresas",
     items: [
       { label: "NR1 & Saúde Mental", href: "/empresas#nr1", description: "Ferramentas para equipes" },

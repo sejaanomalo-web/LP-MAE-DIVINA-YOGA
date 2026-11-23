@@ -26,7 +26,14 @@ export type Partner = {
 };
 
 export const partners: Partner[] = [
-  { id: "wellhub", name: "Wellhub", logo: "/images/wellhub-logo.jpeg" },
+  {
+    id: "wellhub",
+    name: "Wellhub",
+    logo: "/images/wellhub-logo.jpeg",
+    why: "As empresas preocupadas com a saúde de seus funcionários disponibilizam todas as vantagens de ser associado, e uma delas é fazer aulas conosco.",
+    description: "Wellhub é a plataforma de bem-estar corporativo nº 1 do mundo.",
+    benefit: "É simples e fácil: basta agendar sua aula, vir participar e fazer o check-in no dia!",
+  },
   { id: "parceiro-02", name: "Empresa parceira 02" },
   { id: "parceiro-03", name: "Empresa parceira 03" },
   { id: "parceiro-04", name: "Empresa parceira 04" },

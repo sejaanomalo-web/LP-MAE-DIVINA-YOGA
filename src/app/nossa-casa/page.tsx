@@ -140,10 +140,12 @@ export default function NossaCasaPage() {
               "Aulas grátis em dias especiais: Dia dos Pais, Dia das Mães e Dia dos Namorados",
               "Mimos de aniversário",
               "50% de desconto em eventos pagos",
+              "Aplicação de Reiki nas aulas",
+              "Uso de óleos essenciais nas práticas",
             ].map((benefit, index) => (
               <Reveal key={benefit} delay={(index % 2) * 0.08} className="flex gap-5 border-b border-ink/15 py-6 md:pr-8">
                 <span className="min-w-7 text-[0.7rem] font-semibold text-terracotta">
-                  {['I', 'II', 'III', 'IV', 'V', 'VI'][index]}
+                  {['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][index]}
                 </span>
                 <p className="text-sm leading-7 text-ink-soft">{benefit}</p>
               </Reveal>

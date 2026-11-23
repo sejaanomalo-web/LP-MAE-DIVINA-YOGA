@@ -39,21 +39,7 @@ export function HouseSection() {
           />
         </Reveal>
 
-        <div className="mt-16 grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
-          <Reveal className="relative min-h-[470px] overflow-hidden md:min-h-[620px]">
-            <Image
-              src="/images/carol-cha.jpg"
-              alt="Carol, professora da Mãe Divina Yôga"
-              fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover object-[center_28%]"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-[rgba(25,36,29,0.8)] p-6 text-white backdrop-blur-sm">
-              <p className="font-display text-3xl font-medium">Carol</p>
-              <p className="mt-1 text-xs leading-5 text-white/68">Leveza, técnica e presença em cada condução.</p>
-            </div>
-          </Reveal>
-
+        <div className="mt-16">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-rows-2">
             <Reveal delay={0.08} className="relative min-h-[310px] overflow-hidden sm:col-span-2">
               <Image
