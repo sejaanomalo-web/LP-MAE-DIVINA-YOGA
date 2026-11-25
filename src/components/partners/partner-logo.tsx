@@ -23,7 +23,7 @@ export function PartnerLogo({ partner, size = "md", className = "" }: PartnerLog
 
   if (partner.logo) {
     return (
-      <div className={`${box} px-5 py-4`}>
+      <div className={`${box} ${partner.logoPadding === "compact" ? "p-1" : "px-5 py-4"}`}>
         <div className="relative h-full w-full">
           <Image src={partner.logo} alt={`Logo ${partner.name}`} fill sizes="240px" className="object-contain" />
         </div>
