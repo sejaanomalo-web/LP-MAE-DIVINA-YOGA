@@ -80,7 +80,8 @@ export default function NossaCasaPage() {
               </div>
               <div className="p-6">
                 <p className="font-display text-4xl font-semibold">Reinor</p>
-                <p className="mt-3 text-xs leading-6 text-ink-soft">Conduz as pontes da casa com empresas e projetos, unindo prática, escuta e cultura de bem-estar.</p>
+                <p className="mt-3 text-xs leading-6 text-ink-soft">Com formação em Hatha Yoga desde 2020, Atma Kriya Yoga, Reiki nível 3, Yogaterapia, iniciação em Ashtanga e vivências diversas desde 1997, quando conheceu o Bhakti Yoga e o Kundalini. Hoje ministra aulas e eventos específicos de meditação e autoconhecimento.</p>
+                <p className="mt-3 text-xs leading-6 text-ink-soft">Une o conhecimento da formação em Técnico em Segurança do Trabalho e saúde mental para oferecer palestras e dinâmicas às empresas, com planos de ação especializados no atendimento à NR-1, saúde mental e riscos psicossociais.</p>
               </div>
             </Reveal>
             <Reveal delay={0.16} id="duda" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">

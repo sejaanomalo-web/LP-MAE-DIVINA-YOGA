@@ -32,7 +32,7 @@ export const navigation: NavigationItem[] = [
       { label: "Quem Somos", href: "/nossa-casa#quem-somos", description: "Presença, cuidado e pertencimento" },
       { label: "Carol", href: "/nossa-casa#carol", description: "Práticas e condução das aulas" },
       { label: "Duda", href: "/nossa-casa#duda", description: "Fundadora da Mãe Divina" },
-      { label: "Reinor", href: "/nossa-casa#reinor", description: "Conexões e projetos" },
+      { label: "Reinor", href: "/nossa-casa#reinor", description: "Yoga, meditação e empresas" },
       { label: "Vantagens", href: "/nossa-casa#vantagens", description: "Benefícios de fazer parte da casa" },
       { label: "Missão, Visão e Valores", href: "/nossa-casa#valores", description: "O que sustenta cada encontro" },
     ],
