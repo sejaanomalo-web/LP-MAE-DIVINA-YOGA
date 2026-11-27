@@ -70,8 +70,9 @@ export default function NossaCasaPage() {
                 <Image src="/images/carol-meditacao.jpg" alt="Carol meditando em namastê sobre o tapete, ao ar livre" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-[center_30%]" />
               </div>
               <div className="p-6">
-                <p className="font-display text-4xl font-semibold">Carol</p>
-                <p className="mt-3 text-xs leading-6 text-ink-soft">Conduz práticas com leveza, atenção e profundidade, criando um encontro respeitoso com cada corpo.</p>
+                <p className="font-display text-4xl font-semibold">Carol Reis</p>
+                <p className="mt-3 text-xs leading-6 text-ink-soft">A jornada de Carol Reis no universo do yoga começou há cerca de 20 anos, através do Bhakti Yoga, caminho devocional que despertou seu olhar sensível para a espiritualidade e o autoconhecimento. Desde 2020, dedica-se ao ensino como instrutora de Hatha Yoga, aliando a sabedoria milenar à ciência do movimento. Possui formação acadêmica em Educação Física (Bacharelado e Licenciatura), o que garante uma condução técnica, segura e embasada.</p>
+                <p className="mt-3 text-xs leading-6 text-ink-soft">Em busca de uma visão integral do ser humano, aprofundou seus estudos com iniciações em Reiki (níveis 1 e 2) e Atma Kriya Yoga, além de acumular ricas vivências em linhas como Ashtanga Yoga, Kundalini Yoga, Yogaterapia e Sagrado Feminino. Em suas aulas, prioriza o movimento consciente, integrando alongamentos, fortalecimento e práticas que ampliam a percepção corporal. Com uma escuta atenta e acolhedora, guia cada praticante na harmonização entre corpo, mente e respiração, sempre respeitando o ritmo, a história e as possibilidades individuais de cada aluno.</p>
               </div>
             </Reveal>
             <Reveal delay={0.08} id="reinor" className="scroll-mt-28 overflow-hidden border border-ink/12 bg-[#fffaf5]">
