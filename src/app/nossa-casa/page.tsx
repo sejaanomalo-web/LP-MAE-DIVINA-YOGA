@@ -5,6 +5,8 @@ import Link from "next/link";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { SiteVideoSection } from "@/components/ui/site-video";
+import { nossaCasaVideo } from "@/data/media";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -24,6 +26,8 @@ export default function NossaCasaPage() {
         imageAlt="Sala de práticas iluminada da Mãe Divina Yôga"
         position="center 54%"
       />
+
+      <SiteVideoSection video={nossaCasaVideo} />
 
       <section id="historia" className="bg-paper py-24 md:py-36">
         <div className="content-shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
