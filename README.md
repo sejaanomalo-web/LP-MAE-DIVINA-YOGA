@@ -23,7 +23,7 @@ npm run build
 - `src/data/site.ts`: contatos, navegação, banners e depoimentos.
 - `src/data/class-schedule.ts`: agenda padrão de aulas e texto de apresentação.
 - `src/data/events.ts`: agenda inicial e detalhes dos eventos.
-- `src/data/products.ts`: catálogo e briefing fotográfico de cada produto.
+- `src/data/products.ts`: catálogo, textos e imagens de cada produto.
 - `src/lib/whatsapp.ts`: criação dos links e mensagens de WhatsApp.
 
 ## Agenda editorial

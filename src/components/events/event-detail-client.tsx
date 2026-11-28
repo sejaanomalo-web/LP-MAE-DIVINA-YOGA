@@ -100,7 +100,7 @@ export function EventDetailClient({ slug }: { slug: string }) {
               </div>
             ) : null}
 
-            <div className="mt-14 grid gap-8 border-t border-ink/15 pt-10 md:grid-cols-2">
+            <div className={`mt-14 grid gap-8 border-t border-ink/15 pt-10 ${event.notIncluded.length ? "md:grid-cols-2" : ""}`}>
               <div>
                 <h3 className="font-display text-3xl font-semibold">O que você encontra</h3>
                 <ul className="mt-6 space-y-4">
@@ -111,7 +111,7 @@ export function EventDetailClient({ slug }: { slug: string }) {
                   ))}
                 </ul>
               </div>
-              <div>
+              {event.notIncluded.length ? <div>
                 <h3 className="font-display text-3xl font-semibold">Não está incluído</h3>
                 <ul className="mt-6 space-y-4">
                   {event.notIncluded.map((item) => (
@@ -120,7 +120,7 @@ export function EventDetailClient({ slug }: { slug: string }) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> : null}
             </div>
 
             <div className="mt-14 border border-terracotta/25 bg-sand p-7 md:p-10">

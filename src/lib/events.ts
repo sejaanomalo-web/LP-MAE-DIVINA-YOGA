@@ -17,6 +17,7 @@ export function parseEventDate(date: string) {
 }
 
 export function formatEventDate(event: YogaEvent) {
+  if (!event.date) return "Data a confirmar";
   const start = dateFormatter.format(parseEventDate(event.date));
   if (!event.endDate) return start;
 

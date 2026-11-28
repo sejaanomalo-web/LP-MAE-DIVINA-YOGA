@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import {
   ArrowUpRight,
-  Flame,
   HeartPulse,
+  HandHeart,
   Sparkles,
 } from "lucide-react";
 import { OmIcon } from "@/components/icons/om-icon";
@@ -11,8 +11,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Meditações",
-  description: "Meditação, OM Chanting, Yogaterapia, Kriya Yoga e encontros gratuitos da Mãe Divina Yôga.",
+  title: "Meditação e Cuidado",
+  description: "Meditação, OM Chanting, Yogaterapia e Reiki na Mãe Divina Yôga.",
 };
 
 const paths = [
@@ -21,7 +21,7 @@ const paths = [
     icon: Sparkles,
     number: "01",
     title: "Oficina de Meditação",
-    text: "Fundamentos, técnicas guiadas e continuidade para quem deseja começar ou aprofundar uma prática possível no cotidiano.",
+    text: "É um encontro em que aprofundamos os ensinamentos sobre diferentes técnicas de meditar: passiva guiada, dinâmica (Osho), silenciosa (Zazen) e Japa Mala (Mantra Yoga). As práticas são individuais ou coletivas e trabalham diferentes aspectos da atenção plena (Mindfulness), para quem deseja começar ou se aprofundar nesse caminho.",
   },
   {
     id: "omc",
@@ -38,11 +38,11 @@ const paths = [
     text: "O Yoga aplicado de forma individualizada para apoiar o cuidado com dores, tensões e desequilíbrios do corpo e da mente.",
   },
   {
-    id: "kriya-yoga",
-    icon: Flame,
+    id: "reiki",
+    icon: HandHeart,
     number: "04",
-    title: "Kriya Yoga",
-    text: "Técnicas de respiração, concentração e meditação da tradição do Kriya para aprofundar a prática interior.",
+    title: "Reiki",
+    text: 'O Reiki é uma técnica terapêutica de imposição das mãos criada no Japão em 1922 pelo monge Mikao Usui. A palavra é formada pela união de dois termos japoneses: Rei (que significa "universal", a energia cósmica) e Ki (a "energia vital" que flui em todos os seres vivos).',
   },
 ];
 
@@ -50,7 +50,7 @@ export default function MeditacoesPage() {
   return (
     <main id="conteudo">
       <PageHero
-        eyebrow="Meditações"
+        eyebrow="Meditação e Cuidado"
         title="Presença que se cultiva."
         text="Meditação, estudo, serviço e comunidade como caminhos para aprofundar a prática além do tapete."
         image="/images/reinor-meditacao-eventos.jpg"
@@ -59,6 +59,17 @@ export default function MeditacoesPage() {
       />
       <section className="bg-paper py-24 md:py-36">
         <div className="content-shell">
+          <Reveal className="mb-16 flex flex-col gap-5 border-b border-ink/15 pb-10 md:flex-row md:items-center md:justify-between">
+            <p className="font-display text-3xl font-medium text-ink md:text-4xl">Conheça o OM Chanting</p>
+            <a
+              href="https://www.youtube.com/watch?v=n8xeOCrf5KE"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase text-terracotta"
+            >
+              Assistir ao vídeo <ArrowUpRight size={16} />
+            </a>
+          </Reveal>
           <Reveal className="max-w-4xl">
             <p className="eyebrow">Caminhos de aprofundamento</p>
             <h2 className="display-title mt-6 text-[3.5rem] sm:text-[5rem] lg:text-[7rem]">

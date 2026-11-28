@@ -23,6 +23,8 @@ const images = [
   "/images/casa-altar.jpg",
   "/images/casa-luz.jpg",
   "/images/pratica-em-dupla.jpg",
+  "/images/yoga-nidra-relaxamento.jpg",
+  "/images/yoga-nidra-sala.jpg",
 ];
 
 const emptyForm = {

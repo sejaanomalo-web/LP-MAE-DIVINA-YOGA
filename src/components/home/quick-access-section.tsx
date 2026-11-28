@@ -22,7 +22,7 @@ const highlights = [
   },
   {
     label: "Presença",
-    title: "Meditações",
+    title: "Meditação e Cuidado",
     text: "Oficinas, estudos e práticas de aprofundamento.",
     href: "/meditacoes",
     image: "/images/meditacoes.jpg",
@@ -34,9 +34,9 @@ const highlights = [
     title: "Para empresas",
     text: "Palestras e ferramentas para desenvolver equipes conscientes e atender as conformidades legais.",
     href: "/empresas",
-    image: "/images/reinor-namaste.jpg",
+    image: "/images/empresas-reinor-apresentacao.jpg",
     className: "",
-    position: "center 30%",
+    position: "center 38%",
   },
   {
     label: "Curadoria",

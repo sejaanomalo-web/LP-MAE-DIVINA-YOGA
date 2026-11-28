@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...seedEvents.map((event) => ({
       url: `${baseUrl}/eventos/${event.slug}`,
-      lastModified: new Date(`${event.date}T12:00:00Z`),
+      ...(event.date ? { lastModified: new Date(`${event.date}T12:00:00Z`) } : {}),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

@@ -24,11 +24,11 @@ export function EventsExplorer({ initialCategory = "todos" }: { initialCategory?
     : "todos";
   const [category, setCategory] = useState(knownCategory);
   const months = useMemo(
-    () => [...new Set(events.map((event) => eventMonthKey(event.date)))].sort(),
+    () => [...new Set(events.filter((event) => event.date).map((event) => eventMonthKey(event.date)))].sort(),
     [events],
   );
   const firstMatchingMonth =
-    events.find((event) => category === "todos" || event.category === category)?.date.slice(0, 7) ??
+    events.find((event) => event.date && (category === "todos" || event.category === category))?.date.slice(0, 7) ??
     months[0] ??
     "2026-08";
   const [month, setMonth] = useState(firstMatchingMonth);
@@ -37,7 +37,12 @@ export function EventsExplorer({ initialCategory = "todos" }: { initialCategory?
     () =>
       events
         .filter((event) => category === "todos" || event.category === category)
-        .sort((a, b) => a.date.localeCompare(b.date)),
+        .sort((a, b) => {
+          if (!a.date && !b.date) return a.title.localeCompare(b.title);
+          if (!a.date) return 1;
+          if (!b.date) return -1;
+          return a.date.localeCompare(b.date);
+        }),
     [category, events],
   );
 
@@ -60,7 +65,7 @@ export function EventsExplorer({ initialCategory = "todos" }: { initialCategory?
               onClick={() => {
                 setCategory(item.value);
                 const nextMonth = events.find(
-                  (event) => item.value === "todos" || event.category === item.value,
+                  (event) => event.date && (item.value === "todos" || event.category === item.value),
                 )?.date.slice(0, 7);
                 if (nextMonth) setMonth(nextMonth);
               }}
@@ -76,7 +81,7 @@ export function EventsExplorer({ initialCategory = "todos" }: { initialCategory?
         </div>
       </div>
 
-      <section id="agenda" className="mt-12 border border-ink/12 bg-[#fffaf5] p-5 md:p-8">
+      {category === "todos" || filtered.some((event) => event.date) ? <section id="agenda" className="mt-12 border border-ink/12 bg-[#fffaf5] p-5 md:p-8">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 pb-6">
           <div className="flex items-center gap-3">
             <CalendarDays size={20} className="text-terracotta" />
@@ -104,7 +109,7 @@ export function EventsExplorer({ initialCategory = "todos" }: { initialCategory?
           </div>
         </div>
         <CalendarGrid month={month} events={events.filter((event) => eventMonthKey(event.date) === month)} />
-      </section>
+      </section> : null}
 
       <section className="mt-16">
         <div className="flex items-end justify-between gap-6 border-b border-ink/15 pb-5">
