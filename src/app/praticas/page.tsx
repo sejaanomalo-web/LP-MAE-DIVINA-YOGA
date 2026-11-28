@@ -89,13 +89,13 @@ export default function PraticasPage() {
               },
               {
                 title: "Dhyana",
-                text: "Cultivar atenção",
+                text: "Cultivar a presença consciente",
                 description:
                   "Dhyana (ध्यान) é uma palavra em sânscrito que significa meditação, contemplação profunda ou estado de consciência meditativa. Existem várias formas de meditação, mas o objetivo é um só: plena atenção consciente, o estado de presença do que você é.",
               },
               {
                 title: "Samadhi",
-                text: "Integração e quietude mental",
+                text: "Estado elevado de consciência",
                 description:
                   "Conhecido por vários nomes em diversas tradições, esse é o estágio mais avançado da consciência humana. Estado de profunda integração e quietude mental em que a consciência se unifica ao objeto de contemplação. É o momento em que o Ser se realiza em si mesmo, como caminho, meio e fim, e o entendimento intelectual se une à intuição e aos sentidos e o humano encontra sua divindade.",
               },
