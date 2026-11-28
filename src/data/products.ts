@@ -72,8 +72,9 @@ export const products: Product[] = [
     id: "cintos",
     name: "Cintos para Yoga",
     shortName: "Cintos",
-    description: "Apoio para explorar permanência, alinhamento e alcance com respeito ao corpo.",
-    photoBrief: "Produto estendido e demonstração de uso em um asana simples.",
+    description: "Esse recurso te auxilia a desenvolver e corrigir posturas, trabalhando a flexibilidade e o alongamento com segurança, dentro dos limites do seu corpo.",
+    images: [{ src: "/images/products/cinto-yoga.jpg", alt: "Cinto preto para Yoga com fivela metálica e demonstração de uso no alongamento de uma perna" }],
+    imageFit: "contain",
     accent: "#425A63",
   },
   {
