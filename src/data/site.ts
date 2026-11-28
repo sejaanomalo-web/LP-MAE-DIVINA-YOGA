@@ -69,6 +69,7 @@ export const navigation: NavigationItem[] = [
       { label: "Vivência do Feminino", href: "/eventos/vivencia-do-feminino" },
       { label: "Eventos Gratuitos no Parque", href: "/eventos/eventos-gratuitos-no-parque" },
       { label: "Tarde na Índia", href: "/eventos/tarde-na-india" },
+      { label: "Yoga Nidra", href: "/eventos/yoga-nidra" },
       { label: "Outros eventos", href: "/eventos", description: "Veja o calendário completo" },
     ],
   },
